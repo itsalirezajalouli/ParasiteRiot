@@ -1,19 +1,19 @@
 extends Node2D
 
-@onready var player = get_tree().get_first_node_in_group('player')
+@onready var player = get_tree().get_first_node_in_group('player2')
 @onready var label = $Label
-@onready var chest = get_tree().get_first_node_in_group('Chest_Invisibility')
+@onready var chest = get_tree().get_first_node_in_group('Chest_Slow')
 
 const base_text = '[J] to '
 
 var active_areas = []
-@onready var can_interact = global.can_interact_inv
+@onready var can_interact = global.can_interact_slow
 
 
-func register_area(area: InteractionAreaInvisibility):
+func register_area(area: InteractionAreaSlow):
 	active_areas.push_back(area)
 	
-func unregister_area(area: InteractionAreaInvisibility):
+func unregister_area(area: InteractionAreaSlow):
 	var index = active_areas.find(area)
 	if index != -1:
 		active_areas.remove_at(index)
@@ -27,14 +27,14 @@ func _process(delta):
 		label.global_position = active_areas[0].global_position
 		label.global_position.y -= 36
 		label.global_position.x -= label.size.x / 2
-		label.hide()
+		label.show()
 	elif active_areas.size() > 0 && can_interact:
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		label.text = base_text + active_areas[0].action_name
 		label.global_position = active_areas[0].global_position
 		label.global_position.y -= 36
 		label.global_position.x -= label.size.x / 2
-		label.hide()
+		label.show()
 	else:
 		label.hide()
 		

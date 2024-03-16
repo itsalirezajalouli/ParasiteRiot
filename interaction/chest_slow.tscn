@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dejx1iftqd85f"]
+[gd_scene load_steps=9 format=3 uid="uid://hot3fba44vhu"]
 
-[ext_resource type="Script" path="res://Chest.gd" id="1_kexpl"]
-[ext_resource type="Texture2D" uid="uid://bjy307ixxwx1v" path="res://World/Box-Spritesheet2.png" id="2_ufcmc"]
-[ext_resource type="PackedScene" uid="uid://bp7yqi7gbdwyy" path="res://interaction/interaction area/interaction_area.tscn" id="3_p3kun"]
+[ext_resource type="Script" path="res://Chest_Slow.gd" id="1_gyab5"]
+[ext_resource type="Texture2D" uid="uid://pjcnndmbvmro" path="res://World/Box-Spritesheet3.png" id="2_tve45"]
+[ext_resource type="Script" path="res://interaction/InteractionAreaSlow.gd" id="3_rq6yc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp1yp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvnis"]
 size = Vector2(16, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd7is"]
 
 [sub_resource type="Animation" id="Animation_0hf33"]
 length = 0.001
@@ -46,29 +44,31 @@ _data = {
 "open": SubResource("Animation_w246a")
 }
 
-[node name="Chest_Speed" type="StaticBody2D" groups=["chest"]]
-script = ExtResource("1_kexpl")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsla7"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Chest_Slow" type="StaticBody2D" groups=["Chest_Slow"]]
+script = ExtResource("1_gyab5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Chest_Slow"]]
 position = Vector2(0, -8)
-texture = ExtResource("2_ufcmc")
+texture = ExtResource("2_tve45")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7.23997e-06, -1.90735e-06)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_gp1yp")
-
-[node name="InteractionArea" parent="." instance=ExtResource("3_p3kun")]
-collision_layer = 4
-action_name = "open"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, -0.5)
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_nd7is")
+shape = SubResource("RectangleShape2D_dvnis")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5hbnd")
 }
+
+[node name="InteractionAreaSlow" type="Area2D" parent="."]
+script = ExtResource("3_rq6yc")
+action_name = "open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionAreaSlow"]
+position = Vector2(0, -0.5)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_vsla7")

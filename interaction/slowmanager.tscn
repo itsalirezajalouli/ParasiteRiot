@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b86wcdv68s15j"]
+
+[ext_resource type="Script" path="res://slowmanager.gd" id="1_wc0cb"]
+[ext_resource type="FontFile" uid="uid://b8253e5gv0ngi" path="res://Font/superstar_memesbruh03.ttf" id="2_e7sy1"]
+
+[node name="slowmanager" type="Node2D"]
+script = ExtResource("1_wc0cb")
+
+[node name="Label" type="Label" parent="."]
+z_index = 20
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_top = -14.0
+offset_right = 62.5
+offset_bottom = 9.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_e7sy1")
+theme_override_font_sizes/font_size = 10
+text = "[J] TO OPEN"
+horizontal_alignment = 1
+vertical_alignment = 1

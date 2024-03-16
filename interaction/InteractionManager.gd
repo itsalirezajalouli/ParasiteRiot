@@ -4,7 +4,7 @@ extends Node2D
 @onready var label = $Label
 @onready var chest = get_tree().get_first_node_in_group('chest')
 
-const base_text = '[E] to '
+const base_text = '[J] to '
 
 var active_areas = []
 @onready var can_interact = global.can_interact
