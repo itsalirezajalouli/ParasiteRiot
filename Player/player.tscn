@@ -772,7 +772,7 @@ _data = {
 "RESET": SubResource("Animation_3opln")
 }
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["player", "player1"]]
 collision_layer = 15
 script = ExtResource("1_vnw68")
 inventory = ExtResource("2_kcg0r")

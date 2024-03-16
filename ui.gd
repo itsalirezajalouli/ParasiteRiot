@@ -31,6 +31,8 @@ func _input(event):
 				$SpeedPotionTimer.start(5)
 			if global.invisibility_potion_used:
 				$InvisibilityPotionTimer.start(5)
+			if global.slow_potion_used:
+				$SlowPotionTimer.start(5)
 		else:
 			inventory.open()
 	if event.is_action_pressed('ui_cancel'):
@@ -48,3 +50,8 @@ func _on_invisibility_potion_timer_timeout():
 	global.detectzone = false
 	global.deathzone = false
 	global.invisible = false
+
+
+func _on_slow_potion_timer_timeout():
+	global.scientistSpeed = 50
+	global.scientistDetectionSpeed = 85

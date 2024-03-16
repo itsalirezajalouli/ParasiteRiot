@@ -188,7 +188,10 @@ vertical_alignment = 1
 
 [node name="InvisibilityPotionTimer" type="Timer" parent="."]
 
+[node name="SlowPotionTimer" type="Timer" parent="."]
+
 [node name="SpeedPotionTimer" type="Timer" parent="."]
 
 [connection signal="timeout" from="InvisibilityPotionTimer" to="." method="_on_invisibility_potion_timer_timeout"]
+[connection signal="timeout" from="SlowPotionTimer" to="." method="_on_slow_potion_timer_timeout"]
 [connection signal="timeout" from="SpeedPotionTimer" to="." method="_on_speed_potion_timer_timeout"]

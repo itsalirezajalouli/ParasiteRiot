@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 
 InteractionManager="*res://interaction/InteractionManager.tscn"
 global="*res://global.gd"
+Invismanager="*res://interaction/interaction_manager_invis.tscn"
 
 [display]
 

@@ -120,12 +120,17 @@ func removeItem():
 			global.speed_potion_used = true
 			itemInHand.queue_free()
 	
-	if itemInHand.inventorySlot.item.name == 'invisibilityPotion':
-		if is_instance_valid(itemInHand):
+		if itemInHand.inventorySlot.item.name == 'invisibilityPotion':
 			global.invisible = true
 			global.detectzone = true
 			global.deathzone = true
 			global.invisibility_potion_used = true
+			itemInHand.queue_free()
+			
+		if itemInHand.inventorySlot.item.name == 'SlowPotion':
+			global.slow_potion_used = true
+			global.scientistSpeed = 20
+			global.scientistDetectionSpeed = 20
 			itemInHand.queue_free()
 
 func _input(event):
@@ -151,6 +156,11 @@ func removeAll():
 		
 
 func _exit_tree():
+	global.playerSpeed = 120
+	global.scientistSpeed = 50
+	global.scientistDetectionSpeed = 85
+	global.can_interact = true
+	global.can_interact_inv = true
 	removeAll()
 	
 

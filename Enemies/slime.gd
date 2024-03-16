@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 
 @export var id = "alex"
-@export var speed = 50
+var speed = global.scientistSpeed
+var detectionSpeed = global.scientistDetectionSpeed
 @export var limit = 0.5
 @export var FRICTION = 30
 @onready var endPoint = $Marker2D
@@ -68,6 +69,8 @@ func updateAnimation():
 		animationState.travel('walk')
 	
 func _physics_process(delta):
+	speed = global.scientistSpeed
+	detectionSpeed = global.scientistDetectionSpeed
 	$Label.text=id
 	updateVelocity()
 	if global.detectzone:
@@ -94,7 +97,7 @@ func _physics_process(delta):
 				if moveDirection.length() < limit:
 					changeDirectionToPlayer()
 
-				velocity = moveDirection.normalized() * 85
+				velocity = moveDirection.normalized() * detectionSpeed
 				
 	updateAnimation()
 	move_and_slide()

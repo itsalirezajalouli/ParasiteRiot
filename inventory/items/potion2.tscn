@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://c5h3rqpdcdfj4" path="res://inventory/items/invpotion.tres" id="2_jj1ch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isofy"]
-size = Vector2(20, 17.6667)
+size = Vector2(23.3333, 32.6667)
 
 [node name="StaticBody2D" type="StaticBody2D" groups=["collectible"]]
 scale = Vector2(0.6, 0.6)
@@ -18,5 +18,5 @@ itemRes = ExtResource("2_jj1ch")
 texture = ExtResource("1_nme3e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.96705e-07, 7.16667)
+position = Vector2(4.47035e-07, -0.333323)
 shape = SubResource("RectangleShape2D_isofy")

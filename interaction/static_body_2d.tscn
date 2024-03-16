@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dejx1iftqd85f"]
+[gd_scene load_steps=9 format=3 uid="uid://ub8ars3qnico"]
 
-[ext_resource type="Script" path="res://Chest.gd" id="1_kexpl"]
-[ext_resource type="Texture2D" uid="uid://dc1bksv2l3luq" path="res://World/Box-Spritesheet1.png" id="2_lrh4v"]
-[ext_resource type="PackedScene" uid="uid://bp7yqi7gbdwyy" path="res://interaction/interaction area/interaction_area.tscn" id="3_p3kun"]
+[ext_resource type="Texture2D" uid="uid://dc1bksv2l3luq" path="res://World/Box-Spritesheet1.png" id="1_lfdkc"]
+[ext_resource type="Script" path="res://interaction/Chest_Invisibility.gd" id="1_pteto"]
+[ext_resource type="Script" path="res://InteractionAreaInvisibility.gd" id="2_mhate"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp1yp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbuad"]
 size = Vector2(16, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd7is"]
 
 [sub_resource type="Animation" id="Animation_0hf33"]
 length = 0.001
@@ -46,29 +44,34 @@ _data = {
 "open": SubResource("Animation_w246a")
 }
 
-[node name="Chest_Speed" type="StaticBody2D" groups=["chest"]]
-script = ExtResource("1_kexpl")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogej4"]
+
+[node name="Chest_Invisibility" type="StaticBody2D" groups=["Chest_Invisibility"]]
+script = ExtResource("1_pteto")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
-texture = ExtResource("2_lrh4v")
+texture = ExtResource("1_lfdkc")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7.23997e-06, -1.90735e-06)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_gp1yp")
-
-[node name="InteractionArea" parent="." instance=ExtResource("3_p3kun")]
-collision_layer = 4
-action_name = "open"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, -0.5)
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_nd7is")
+shape = SubResource("RectangleShape2D_xbuad")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5hbnd")
 }
+
+[node name="InteractionAreaInvisibility" type="Area2D" parent="."]
+script = ExtResource("2_mhate")
+action_name = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionAreaInvisibility"]
+position = Vector2(0, -0.5)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_ogej4")
+
+[connection signal="body_entered" from="InteractionAreaInvisibility" to="InteractionAreaInvisibility" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionAreaInvisibility" to="InteractionAreaInvisibility" method="_on_body_exited"]

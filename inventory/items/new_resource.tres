@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItemm" load_steps=3 format=3 uid="uid://bi3w3tlejr867"]
+
+[ext_resource type="Script" path="res://inventory/inventoryitem.gd" id="1_ol7p0"]
+[ext_resource type="Texture2D" uid="uid://blvlwetr5g531" path="res://inventory/items/SlowPotion-Sprite-inv.png" id="2_74lpr"]
+
+[resource]
+script = ExtResource("1_ol7p0")
+stackSize = 1
+name = "SlowPotion"
+texture = ExtResource("2_74lpr")
