@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp6vi7nbnhqej"]
+
+[ext_resource type="Script" path="res://Enemies/player_detection_zone.gd" id="1_7ei6a"]
+
+[node name="PlayerDetectionZone" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_7ei6a")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -1.25, -111, 31.25, -76, 115, 1, 145, 75, 115, 117, 28.75)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://do3w8prgtkptg"]
+
+[ext_resource type="Script" path="res://Enemies/player_trigger_zone.gd" id="1_wwbm7"]
+
+[node name="PlayerTriggerZone" type="Area2D"]
+script = ExtResource("1_wwbm7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -1.25, -111, 31.25, -76, 115, 1, 145, 75, 115, 117, 28.75)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

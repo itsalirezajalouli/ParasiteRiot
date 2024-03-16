@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://b113om5rf1dpt"]
+
+[ext_resource type="Texture2D" uid="uid://btgwgl8e7ly26" path="res://World/Door2_pipo.png" id="1_2ob8k"]
+[ext_resource type="Script" path="res://World/door.gd" id="1_i2gtd"]
+[ext_resource type="PackedScene" uid="uid://bp7yqi7gbdwyy" path="res://interaction/interaction area/interaction_area.tscn" id="3_nech1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_beavd"]
+size = Vector2(31, 60.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1h2ar"]
+
+[sub_resource type="Animation" id="Animation_eeb8m"]
+resource_name = "open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_edn84"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38oko"]
+_data = {
+"RESET": SubResource("Animation_edn84"),
+"open": SubResource("Animation_eeb8m")
+}
+
+[node name="door" type="StaticBody2D"]
+script = ExtResource("1_i2gtd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2ob8k")
+hframes = 6
+vframes = 4
+frame = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14.75)
+shape = SubResource("RectangleShape2D_beavd")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_nech1")]
+action_name = "open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 23)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_1h2ar")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_38oko")
+}
+
+[editable path="InteractionArea"]

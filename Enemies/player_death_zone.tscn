@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cca7d4htn62m"]
+
+[ext_resource type="Script" path="res://Enemies/player_death_zone.gd" id="1_bftwy"]
+
+[node name="PlayerControlZone" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_bftwy")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, -1, 47, -25, 36, 27, 1, 41, -31, 26, -46, -21)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

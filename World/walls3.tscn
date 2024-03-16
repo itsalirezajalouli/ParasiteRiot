@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyblhhxquj6lx"]
+
+[ext_resource type="Texture2D" uid="uid://1tt50twhf6ru" path="res://World/Wall-Tile-0005.png" id="1_ll6yf"]
+[ext_resource type="Texture2D" uid="uid://dh6ynr1aqv8w6" path="res://Light4.png" id="2_7kbqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3c2o"]
+size = Vector2(63, 64)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ll6yf")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.596078, 1, 0.34902, 1)
+texture = ExtResource("2_7kbqu")
+texture_scale = 0.45
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.81e-06, 0.499998)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_g3c2o")

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0idtvyfhdvas"]
+
+[ext_resource type="PackedScene" uid="uid://b41txu0l84nt1" path="res://World/world.tscn" id="1_ahems"]
+[ext_resource type="PackedScene" uid="uid://dtdmls5ttus6i" path="res://ui.tscn" id="2_qhgrr"]
+[ext_resource type="PackedScene" uid="uid://ddkf1y2lskp2b" path="res://inventory/inventory_gui.tscn" id="3_01bbk"]
+[ext_resource type="PackedScene" uid="uid://dogxiw7j046ui" path="res://UI/pause_gui.tscn" id="4_507qi"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+
+[node name="World" parent="." instance=ExtResource("1_ahems")]
+
+[node name="Ui" parent="World" instance=ExtResource("2_qhgrr")]
+unique_name_in_owner = true
+process_mode = 3
+
+[node name="InventoryGui" parent="World/Ui" instance=ExtResource("3_01bbk")]
+
+[node name="Pause" parent="World/Ui" instance=ExtResource("4_507qi")]
+
+[connection signal="closed" from="World/Ui/InventoryGui" to="World" method="_on_inventory_gui_closed"]
+[connection signal="opened" from="World/Ui/InventoryGui" to="World" method="_on_inventory_gui_opened"]
+[connection signal="closed" from="World/Ui/Pause" to="World" method="_on_pause_closed"]
+[connection signal="opened" from="World/Ui/Pause" to="World" method="_on_pause_opened"]
+
+[editable path="World"]
+[editable path="World/slimes/slime"]
+[editable path="World/slimes/slime/PlayerDeathZone2"]
+[editable path="World/slimes/slime/PlayerDetectionZone"]
+[editable path="World/slimes/slime/PlayerDeathZone"]
+[editable path="World/slimes/slime2"]
+[editable path="World/slimes/slime2/PlayerDeathZone2"]
+[editable path="World/slimes/slime2/PlayerDetectionZone"]
+[editable path="World/slimes/slime2/PlayerDeathZone"]

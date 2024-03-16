@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bradi6bvgyadt"]
+
+[ext_resource type="PackedScene" uid="uid://c208d8qdy5sbi" path="res://World/grass.tscn" id="1_5kwlo"]
+[ext_resource type="Texture2D" uid="uid://w3l6h2buwfdb" path="res://inventory/items/Potion-Sprite-0003.png" id="2_6ltdo"]
+[ext_resource type="Resource" uid="uid://qyqfafm1lbie" path="res://inventory/items/potion.tres" id="2_h06ku"]
+
+[node name="Collectible" instance=ExtResource("1_5kwlo")]
+itemRes = ExtResource("2_h06ku")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_6ltdo")
+hframes = 1
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(7.5, 11.75)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctmw22ect1d0g"]
+
+[ext_resource type="Script" path="res://inventory/items/potion2.gd" id="1_j1q38"]
+[ext_resource type="Texture2D" uid="uid://cxfkjpyxiauoc" path="res://inventory/items/Potion-Sprite-0001.png" id="1_nme3e"]
+[ext_resource type="Resource" uid="uid://c5h3rqpdcdfj4" path="res://inventory/items/invpotion.tres" id="2_jj1ch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isofy"]
+size = Vector2(20, 17.6667)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["collectible"]]
+scale = Vector2(0.6, 0.6)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_j1q38")
+itemRes = ExtResource("2_jj1ch")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["collectible"]]
+texture = ExtResource("1_nme3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.96705e-07, 7.16667)
+shape = SubResource("RectangleShape2D_isofy")

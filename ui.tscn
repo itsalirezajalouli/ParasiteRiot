@@ -1,0 +1,194 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtdmls5ttus6i"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_cbihy"]
+[ext_resource type="Texture2D" uid="uid://dfbtc4eu7j2wt" path="res://World/Grass.png" id="1_rj30h"]
+[ext_resource type="FontFile" uid="uid://bon1613y2aqhb" path="res://Font/m3x6.ttf" id="3_3lq0n"]
+[ext_resource type="FontFile" uid="uid://b8253e5gv0ngi" path="res://Font/superstar_memesbruh03.ttf" id="3_w2mdq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mage2"]
+bg_color = Color(0.0086154, 0.529807, 0.313691, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxnl5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(1.51612e-06, 0.459101, 0.289833, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thlvm"]
+bg_color = Color(1.51612e-06, 0.459101, 0.289833, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf7q1"]
+bg_color = Color(0.0086154, 0.529807, 0.313691, 1)
+
+[node name="Ui" type="CanvasLayer"]
+script = ExtResource("1_cbihy")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="AvatarFrame" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -172.0
+offset_right = -8.0
+offset_bottom = -148.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mage2")
+
+[node name="TextureRect" type="TextureRect" parent="Control/AvatarFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -15.0
+offset_right = 12.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rj30h")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/AvatarFrame"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 18.0
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("3_3lq0n")
+theme_override_font_sizes/font_size = 17
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Inventory2" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 177.0
+offset_bottom = 53.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yxnl5")
+
+[node name="Nickname2" type="Label" parent="Control/Inventory2"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 2.0
+offset_right = 72.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("3_w2mdq")
+theme_override_font_sizes/font_size = 16
+text = "Parasites"
+
+[node name="Parasites Freed" type="ProgressBar" parent="Control/Inventory2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -6.0
+offset_right = -26.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_3lq0n")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/background = SubResource("StyleBoxFlat_thlvm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jf7q1")
+
+[node name="Inventory" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -88.0
+offset_right = -8.0
+offset_bottom = -58.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yxnl5")
+metadata/_edit_group_ = true
+
+[node name="AvatarFrame2" type="Panel" parent="Control/Inventory"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -24.0
+offset_right = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mage2")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/Inventory/AvatarFrame2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -15.0
+offset_right = 12.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rj30h")
+expand_mode = 1
+flip_h = true
+
+[node name="Keys" type="Label" parent="Control/Inventory/AvatarFrame2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 18.0
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("3_3lq0n")
+theme_override_font_sizes/font_size = 17
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InvisibilityPotionTimer" type="Timer" parent="."]
+
+[node name="SpeedPotionTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="InvisibilityPotionTimer" to="." method="_on_invisibility_potion_timer_timeout"]
+[connection signal="timeout" from="SpeedPotionTimer" to="." method="_on_speed_potion_timer_timeout"]

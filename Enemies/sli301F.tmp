@@ -1,0 +1,209 @@
+[gd_scene load_steps=13 format=3 uid="uid://cegjy42eoi3mw"]
+
+[ext_resource type="Script" path="res://Enemies/slime.gd" id="1_gcv1a"]
+[ext_resource type="Texture2D" uid="uid://cld45v04yh5xa" path="res://Enemies/Scientist-Spritesheet-0001.png" id="2_jp5jg"]
+[ext_resource type="PackedScene" uid="uid://cp6vi7nbnhqej" path="res://Enemies/player_detection_zone.tscn" id="3_vk66i"]
+[ext_resource type="PackedScene" uid="uid://cca7d4htn62m" path="res://Enemies/player_death_zone.tscn" id="4_ic57g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gspmy"]
+radius = 14.0
+height = 28.0
+
+[sub_resource type="Animation" id="Animation_2052n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerDetectionZone/CollisionPolygon2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ugwam"]
+resource_name = "WalkDown"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerDetectionZone/CollisionPolygon2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_l6o6m"]
+resource_name = "WalkLeft"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerDetectionZone/CollisionPolygon2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.5708, 1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_30mc3"]
+resource_name = "WalkRight"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerDetectionZone/CollisionPolygon2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.5708, -1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_qwmo6"]
+resource_name = "WalkUp"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerDetectionZone/CollisionPolygon2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.14159, 3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hhavl"]
+_data = {
+"RESET": SubResource("Animation_2052n"),
+"WalkDown": SubResource("Animation_ugwam"),
+"WalkLeft": SubResource("Animation_l6o6m"),
+"WalkRight": SubResource("Animation_30mc3"),
+"WalkUp": SubResource("Animation_qwmo6")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_edrog"]
+radius = 17.0
+height = 62.0
+
+[node name="Scientist" type="CharacterBody2D"]
+y_sort_enabled = true
+position = Vector2(0, 1)
+collision_layer = 2
+script = ExtResource("1_gcv1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_jp5jg")
+hframes = 8
+frame = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_gspmy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hhavl")
+}
+
+[node name="HitBox" type="Area2D" parent="."]
+visible = false
+scale = Vector2(1, 0.8)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_edrog")
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource("3_vk66i")]
+collision_mask = 8
+
+[node name="CollisionPolygon2D" parent="PlayerDetectionZone" index="0"]
+scale = Vector2(0.9, 0.9)
+polygon = PackedVector2Array(0, -2, -92, -40, -119, -15, -136, 55, -74, 116, -2, 135, 74, 117, 141, 48, 117, -22, 81, -41)
+
+[node name="PlayerDeathZone" parent="." instance=ExtResource("4_ic57g")]
+
+[editable path="PlayerDetectionZone"]

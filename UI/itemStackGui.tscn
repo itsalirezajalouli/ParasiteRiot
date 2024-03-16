@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt2mfmts3571n"]
+
+[ext_resource type="Script" path="res://UI/itemStackGui.gd" id="1_4nroq"]
+
+[node name="Panel" type="Panel"]
+script = ExtResource("1_4nroq")
+
+[node name="item" type="Sprite2D" parent="."]

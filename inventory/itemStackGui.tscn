@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://5rb8apiwg0i2"]
+
+[ext_resource type="FontFile" uid="uid://b8253e5gv0ngi" path="res://Font/superstar_memesbruh03.ttf" id="1_4jqkl"]
+[ext_resource type="Script" path="res://inventory/itemStackGui.gd" id="1_b7ijx"]
+
+[node name="Panel" type="Panel"]
+script = ExtResource("1_b7ijx")
+
+[node name="item" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(10, 14)
+layout_mode = 0
+offset_left = -4.0
+offset_right = 10.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_4jqkl")
+theme_override_font_sizes/font_size = 13
+text = "9"
+horizontal_alignment = 2

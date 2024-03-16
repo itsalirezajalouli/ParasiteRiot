@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7jtx0w81maw8"]
+
+[ext_resource type="Texture2D" uid="uid://bitq7dbpr7jos" path="res://UI/grid.png" id="1_0qaqc"]
+[ext_resource type="Script" path="res://UI/creators.gd" id="1_pcmdq"]
+[ext_resource type="FontFile" uid="uid://b8253e5gv0ngi" path="res://Font/superstar_memesbruh03.ttf" id="2_bypxc"]
+[ext_resource type="StyleBox" uid="uid://f0gosvlwm4c6" path="res://Font/buttonstyle2.tres" id="3_sui12"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_maygd"]
+bg_color = Color(0.0823529, 1, 0.643137, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_pcmdq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 184.0
+color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.117647)
+position = Vector2(160, 90)
+texture = ExtResource("1_0qaqc")
+
+[node name="back" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_top = 145.0
+offset_right = 27.0
+offset_bottom = 168.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+theme_override_colors/font_hover_color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+theme_override_colors/font_focus_color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+theme_override_colors/font_disabled_color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("2_bypxc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_maygd")
+theme_override_styles/hover = ExtResource("3_sui12")
+theme_override_styles/pressed = ExtResource("3_sui12")
+theme_override_styles/focus = ExtResource("3_sui12")
+text = "Back"
+
+[node name="Label4" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.0
+offset_top = 56.0
+offset_right = 161.0
+offset_bottom = 80.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_fonts/font = ExtResource("2_bypxc")
+theme_override_font_sizes/font_size = 13
+text = "Hanieh salehi     :    lead artist"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.0
+offset_top = 104.0
+offset_right = 161.0
+offset_bottom = 128.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_fonts/font = ExtResource("2_bypxc")
+theme_override_font_sizes/font_size = 13
+text = "Mahdi  moazedi    :    programmer  /  game designer"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.0
+offset_top = 80.0
+offset_right = 161.0
+offset_bottom = 104.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_fonts/font = ExtResource("2_bypxc")
+theme_override_font_sizes/font_size = 13
+text = "alireza jalouli  :    programmer  /  game designer"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.5
+offset_top = 20.0
+offset_right = 98.5
+offset_bottom = 44.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_fonts/font = ExtResource("2_bypxc")
+theme_override_font_sizes/font_size = 24
+text = "creators"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c208d8qdy5sbi"]
+
+[ext_resource type="Script" path="res://World/grass.gd" id="1_2vg3c"]
+[ext_resource type="Resource" uid="uid://qyqfafm1lbie" path="res://inventory/items/potion.tres" id="2_7ddtj"]
+[ext_resource type="Texture2D" uid="uid://w3l6h2buwfdb" path="res://inventory/items/Potion-Sprite-0003.png" id="3_8kr8o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewxc3"]
+size = Vector2(10, 11)
+
+[node name="Collectible" type="StaticBody2D" groups=["collectible"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_2vg3c")
+itemRes = ExtResource("2_7ddtj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -5)
+rotation = -6.28319
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_8kr8o")
+centered = false
+offset = Vector2(-15, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ewxc3")
