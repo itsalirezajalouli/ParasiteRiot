@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgv1cngn50l32"]
+
+[ext_resource type="PackedScene" uid="uid://cegjy42eoi3mw" path="res://Enemies/slime.tscn" id="1_vkvn1"]
+[ext_resource type="Texture2D" uid="uid://d3piwid2ydhm3" path="res://Enemies/spritesheet (8).png" id="2_tygxu"]
+
+[node name="Scientist" instance=ExtResource("1_vkvn1")]
+
+[node name="Sprite2D" parent="." index="2"]
+scale = Vector2(1.1, 1.2)
+texture = ExtResource("2_tygxu")
+hframes = 32
+vframes = 1
+
+[node name="PlayerDeathZone2" parent="." index="6"]
+script = null
+
+[connection signal="body_entered" from="PlayerDeathZone2" to="." method="_on_player_death_zone_2_body_entered"]
+
+[editable path="PlayerDeathZone2"]
+[editable path="PlayerDetectionZone"]
+[editable path="PlayerDeathZone"]

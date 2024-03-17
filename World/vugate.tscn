@@ -63,7 +63,7 @@ _data = {
 "open": SubResource("Animation_vrvv1")
 }
 
-[node name="vgate" type="StaticBody2D"]
+[node name="vugate" type="StaticBody2D"]
 position = Vector2(-3, 0)
 script = ExtResource("1_v3nkc")
 

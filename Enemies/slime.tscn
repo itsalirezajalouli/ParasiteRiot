@@ -96,6 +96,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(1, 62.5)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 1.2)]
+}
 
 [sub_resource type="Animation" id="Animation_ugwam"]
 resource_name = "WalkDown"
@@ -452,6 +464,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [Vector2(0, -50)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 1.2)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hhavl"]
 _data = {
@@ -462,26 +486,26 @@ _data = {
 "WalkUp": SubResource("Animation_qwmo6")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q03wh"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tfic4"]
 animation = &"WalkDown"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6hk5y"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rcxit"]
 animation = &"WalkUp"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dlwjv"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ricrl"]
 animation = &"WalkLeft"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ba44c"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ogrck"]
 animation = &"WalkRight"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_talek"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_q03wh")
+blend_point_0/node = SubResource("AnimationNodeAnimation_tfic4")
 blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_6hk5y")
+blend_point_1/node = SubResource("AnimationNodeAnimation_rcxit")
 blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_dlwjv")
+blend_point_2/node = SubResource("AnimationNodeAnimation_ricrl")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_ba44c")
+blend_point_3/node = SubResource("AnimationNodeAnimation_ogrck")
 blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
@@ -500,8 +524,8 @@ radius = 14.0
 height = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_edrog"]
-radius = 98.4196
-height = 212.5
+radius = 98.623
+height = 246.049
 
 [node name="Scientist" type="CharacterBody2D"]
 z_index = -1
@@ -533,6 +557,7 @@ parameters/walk/blend_position = Vector2(0.00312829, -0.0291005)
 z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -8)
+scale = Vector2(1.1, 1.2)
 texture = ExtResource("2_6kqpr")
 hframes = 8
 vframes = 4
@@ -554,7 +579,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(1, 62.5)
-scale = Vector2(1.22943, 0.679982)
+scale = Vector2(1.22944, 0.547763)
 shape = SubResource("CapsuleShape2D_edrog")
 
 [node name="PlayerDeathZone2" parent="." instance=ExtResource("3_eqm8b")]

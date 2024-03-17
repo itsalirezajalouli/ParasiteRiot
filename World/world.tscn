@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b41txu0l84nt1"]
+[gd_scene load_steps=32 format=3 uid="uid://b41txu0l84nt1"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_u34cw"]
 [ext_resource type="PackedScene" uid="uid://b8erj3x5fewed" path="res://Player/player.tscn" id="2_3vxcb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://2ammcc6yhrfs" path="res://World/walls2.tscn" id="3_ln3qp"]
 [ext_resource type="PackedScene" uid="uid://cegjy42eoi3mw" path="res://Enemies/slime.tscn" id="4_804nt"]
 [ext_resource type="Texture2D" uid="uid://ba2l11gweqy1" path="res://World/Tileset.png" id="4_ckb7d"]
+[ext_resource type="Texture2D" uid="uid://d3piwid2ydhm3" path="res://Enemies/spritesheet (8).png" id="5_guq6s"]
 [ext_resource type="PackedScene" uid="uid://bskqor2mp2pa8" path="res://World/walls.tscn" id="5_yhgdx"]
 [ext_resource type="PackedScene" uid="uid://dejx1iftqd85f" path="res://World/chest.tscn" id="7_ecwa0"]
 [ext_resource type="PackedScene" uid="uid://cyblhhxquj6lx" path="res://World/walls3.tscn" id="11_cw71f"]
@@ -1354,6 +1355,218 @@ terrain_set_0/terrain_1/name = "corners"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_cqq8e")
 
+[sub_resource type="Animation" id="Animation_teob8"]
+resource_name = "WalkDown"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8, 1.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, -21)]
+}
+
+[sub_resource type="Animation" id="Animation_x4g4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8, 1.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -8)]
+}
+
+[sub_resource type="Animation" id="Animation_4d12f"]
+resource_name = "WalkUp"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 12, 13, 14, 15, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8, 1.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -20)]
+}
+
+[sub_resource type="Animation" id="Animation_mpm35"]
+resource_name = "WalkLeft"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [30, 29, 28, 27, 26, 25, 24, 31]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.113725),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.4), Vector2(1.1, 1.4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.163475),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, -34), Vector2(4, -34)]
+}
+
+[sub_resource type="Animation" id="Animation_iroeo"]
+resource_name = "WalkRight"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [17, 18, 19, 20, 21, 22, 23, 16]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 1.4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -34)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ph8af"]
+_data = {
+"RESET": SubResource("Animation_x4g4t"),
+"WalkDown": SubResource("Animation_teob8"),
+"WalkLeft": SubResource("Animation_mpm35"),
+"WalkRight": SubResource("Animation_iroeo"),
+"WalkUp": SubResource("Animation_4d12f")
+}
+
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_u34cw")
@@ -1376,49 +1589,76 @@ position = Vector2(8, 0)
 
 [node name="slime" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(-192, -64)
-id = "Bob"
+id = "bob"
 
 [node name="Marker2D" parent="slimes/slime" index="10"]
 position = Vector2(264, 8)
 
 [node name="slime2" parent="slimes" instance=ExtResource("4_804nt")]
-position = Vector2(120, 96)
-id = "Terry"
+position = Vector2(496, 240)
+id = "jane"
+
+[node name="Sprite2D" parent="slimes/slime2" index="2"]
+scale = Vector2(0.8, 1.1)
+texture = ExtResource("5_guq6s")
+hframes = 32
+vframes = 1
+frame = 1
+
+[node name="HitBox" parent="slimes/slime2" index="5"]
+scale = Vector2(1.13157, 0.811466)
+
+[node name="CollisionShape2D" parent="slimes/slime2/HitBox" index="0"]
+scale = Vector2(1.64979, 0.480017)
+
+[node name="PlayerDeathZone2" parent="slimes/slime2" index="6"]
+script = null
+
+[node name="CollisionPolygon2D" parent="slimes/slime2/PlayerDetectionZone" index="0"]
+polygon = PackedVector2Array(0, -2, -151.111, 53.3328, -115.556, 133.333, 8.88834, 151.111, 133.333, 124.445, 151.111, 35.5562)
+
+[node name="CollisionPolygon2D" parent="slimes/slime2/PlayerDeathZone" index="0"]
+scale = Vector2(1, 1.32)
 
 [node name="Marker2D" parent="slimes/slime2" index="10"]
-position = Vector2(0, 256)
+position = Vector2(-264, 16)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="slimes/slime2"]
+libraries = {
+"": SubResource("AnimationLibrary_ph8af")
+}
 
 [node name="slime3" parent="slimes" instance=ExtResource("4_804nt")]
-position = Vector2(552, 296)
-id = "Jack"
+position = Vector2(112, 72)
+id = "terry"
 
 [node name="Marker2D" parent="slimes/slime3" index="10"]
-position = Vector2(-304, 8)
+position = Vector2(8, 256)
 
 [node name="slime8" parent="slimes" instance=ExtResource("4_804nt")]
-position = Vector2(3048, 85)
+position = Vector2(1672, 800)
 id = "Scott"
 
+[node name="Label" parent="slimes/slime8" index="0"]
+metadata/_edit_use_anchors_ = true
+
 [node name="Marker2D" parent="slimes/slime8" index="10"]
-position = Vector2(-216, 16)
+position = Vector2(-216, 0)
 
 [node name="slime7" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(1112, -152)
-id = "Ray"
 
 [node name="Marker2D" parent="slimes/slime7" index="10"]
 position = Vector2(-312, 184)
 
 [node name="slime11" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(1224, -456)
-id = "Alex"
 
 [node name="Marker2D" parent="slimes/slime11" index="10"]
 position = Vector2(-304, 6)
 
 [node name="slime12" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(826, -944)
-id = "Alex"
 
 [node name="Sprite2D" parent="slimes/slime12" index="2"]
 position = Vector2(0, -24)
@@ -1428,7 +1668,6 @@ position = Vector2(0, 184)
 
 [node name="slime13" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(1240, -1096)
-id = "Alex"
 
 [node name="Sprite2D" parent="slimes/slime13" index="2"]
 position = Vector2(0, -24)
@@ -1438,14 +1677,12 @@ position = Vector2(-449, 0)
 
 [node name="slime10" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(1640, 96)
-id = "Ray"
 
 [node name="Marker2D" parent="slimes/slime10" index="10"]
 position = Vector2(0, -208)
 
 [node name="slime9" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(1288, -120)
-id = "Ray"
 
 [node name="Marker2D" parent="slimes/slime9" index="10"]
 position = Vector2(0, 232)
@@ -1459,14 +1696,12 @@ position = Vector2(-200, 16)
 
 [node name="slime5" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(320, 840)
-id = "Dave"
 
 [node name="Marker2D" parent="slimes/slime5" index="10"]
 position = Vector2(0, 248)
 
 [node name="slime6" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(736, 1096)
-id = "Dave"
 
 [node name="Marker2D" parent="slimes/slime6" index="10"]
 position = Vector2(0, -264)
@@ -3368,9 +3603,6 @@ position = Vector2(1410, -1120)
 position = Vector2(1405, -1054)
 gate_id = "Key"
 
-[node name="vgate5" parent="." instance=ExtResource("21_0cm7i")]
-position = Vector2(829, 992)
-
 [node name="StaticBody2D114" parent="." instance=ExtResource("20_tmctw")]
 position = Vector2(800, -1120)
 
@@ -3382,6 +3614,15 @@ position = Vector2(1632, -1056)
 
 [node name="Computer" parent="." instance=ExtResource("22_udova")]
 position = Vector2(1698, 736)
+
+[node name="vgate5" parent="." instance=ExtResource("20_tjie0")]
+position = Vector2(832, 992)
+
+[node name="Label" parent="vgate5" index="4"]
+offset_left = -48.0
+offset_top = -8.0
+offset_right = -8.0
+offset_bottom = 15.0
 
 [editable path="slimes/slime"]
 [editable path="slimes/slime/PlayerDeathZone2"]
@@ -3435,3 +3676,4 @@ position = Vector2(1698, 736)
 [editable path="slimes/slime6/PlayerDeathZone2"]
 [editable path="slimes/slime6/PlayerDetectionZone"]
 [editable path="slimes/slime6/PlayerDeathZone"]
+[editable path="vgate5"]

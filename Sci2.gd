@@ -23,7 +23,7 @@ enum {
 	CHASE
 }
 
-@onready var animations = $AnimationPlayer2
+@onready var animations = $AnimationPlayer
 @onready var animationTree : AnimationTree = $AnimationTree
 @onready var animationState = animationTree.get('parameters/playback')
 
@@ -117,4 +117,12 @@ func _on_timer_timeout():
 
 
 func _on_player_death_zone_2_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_player_detection_zone_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_player_detection_zone_body_exited(body):
 	pass # Replace with function body.
