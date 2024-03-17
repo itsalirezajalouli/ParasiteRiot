@@ -114,3 +114,7 @@ func _on_timer_timeout():
 			print(child) 
 			child.process_mode=0
 	pass # Replace with function body.
+
+
+func _on_player_death_zone_2_body_entered(body):
+	pass # Replace with function body.

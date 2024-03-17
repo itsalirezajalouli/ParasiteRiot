@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cdodlh86bboy5" path="res://World/walls4.tscn" id="12_kxeor"]
 [ext_resource type="PackedScene" uid="uid://v0ri20fqvcj7" path="res://World/computers.tscn" id="14_fj3tb"]
 [ext_resource type="PackedScene" uid="uid://crqhg03idve0x" path="res://World/table2.tscn" id="15_58uc7"]
-[ext_resource type="PackedScene" path="res://World/table.tscn" id="16_kwvjc"]
+[ext_resource type="PackedScene" uid="uid://brna7lk3a31x8" path="res://World/table.tscn" id="16_kwvjc"]
 [ext_resource type="PackedScene" uid="uid://dd364r2bh7d8x" path="res://World/gate.tscn" id="17_dmese"]
 [ext_resource type="PackedScene" uid="uid://ctv6dbfa8v0sv" path="res://World/cage.tscn" id="17_uw6es"]
 [ext_resource type="PackedScene" uid="uid://cgg5o8rlby38q" path="res://World/chest_inv.tscn" id="19_2u34w"]
@@ -1746,7 +1746,6 @@ position = Vector2(-160, 128)
 rotation = 1.5708
 
 [node name="StaticBody2D43" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-96, 128)
 rotation = 1.5708
 
@@ -2846,7 +2845,7 @@ position = Vector2(480, 96)
 gate_id = "Bob"
 
 [node name="StaticBody2D7" parent="." instance=ExtResource("17_uw6es")]
-position = Vector2(160, -120)
+position = Vector2(128, -120)
 
 [node name="StaticBody2D32" parent="." instance=ExtResource("17_uw6es")]
 position = Vector2(-224, 456)

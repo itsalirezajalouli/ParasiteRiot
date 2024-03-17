@@ -12,6 +12,9 @@ const FRICTION = 700
 @export var camera_shake = false
 @export var inventory: Inventory
 @onready var label = $Label
+@onready var collision_shape_2d_2 = $CollisionShape2D2
+@onready var collision_shape_2d = $CollisionShape2D
+@onready var hurtb_collision_shape_2d_2 = $HurtBox/CollisionShape2D2
 
 enum {
   MOVE,
@@ -56,6 +59,9 @@ func _process(delta):
 		sprite_2d_3.hide()
 		sprite_2d_2.hide()
 		global.type="none"
+		hurtb_collision_shape_2d_2.disabled = false
+		collision_shape_2d.disabled = true
+		collision_shape_2d_2.disabled = false
 		$AnimationPlayer_yaroo.active = false
 		$AnimationTree_yaroo.active = false
 		animationPlayer = $AnimationPlayer
@@ -63,7 +69,9 @@ func _process(delta):
 		animationState = animationTree.get('parameters/playback')
 		label.hide()
 	if global.type != "none" and animationPlayer!=$AnimationPlayer_yaroo:
-		print('2')
+		hurtb_collision_shape_2d_2.disabled = false
+		collision_shape_2d.disabled = true
+		collision_shape_2d_2.disabled = false
 		sprite_2d.hide()
 		sprite_2d_2.hide()
 		sprite_2d_3.show()
@@ -74,6 +82,9 @@ func _process(delta):
 		label.show()
 		label.text = '[k] detach'
 	if global.type == 'none':
+		hurtb_collision_shape_2d_2.disabled = true
+		collision_shape_2d.disabled = false
+		collision_shape_2d_2.disabled = true
 		print('1')
 		sprite_2d.show()
 		sprite_2d_2.hide()
