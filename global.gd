@@ -14,3 +14,4 @@ var scientistDetectionSpeed = 85
 var can_interact = true
 var can_interact_inv = true
 var can_interact_slow = true
+var eyes = 0

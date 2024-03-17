@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://5pg5wepp2b4p"]
+
+[ext_resource type="Script" path="res://vgate.gd" id="1_fikoo"]
+[ext_resource type="Texture2D" uid="uid://2co142xxoy0t" path="res://World/VDoorSheet.png" id="2_gm8ne"]
+[ext_resource type="FontFile" uid="uid://b8253e5gv0ngi" path="res://Font/superstar_memesbruh03.ttf" id="3_hhp0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6355"]
+size = Vector2(9.38313, 20.7727)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n831"]
+
+[sub_resource type="Animation" id="Animation_wbkm7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_300kk"]
+resource_name = "close"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_vrvv1"]
+resource_name = "open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1u04t"]
+_data = {
+"RESET": SubResource("Animation_wbkm7"),
+"close": SubResource("Animation_300kk"),
+"open": SubResource("Animation_vrvv1")
+}
+
+[node name="vgate" type="StaticBody2D"]
+position = Vector2(-3, 0)
+script = ExtResource("1_fikoo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(35, 0)
+rotation = 3.14159
+texture = ExtResource("2_gm8ne")
+flip_h = true
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(5, -3.24249e-05)
+scale = Vector2(1.49204, 3.08097)
+shape = SubResource("RectangleShape2D_r6355")
+
+[node name="intract" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="intract"]
+visible = false
+position = Vector2(0, 9.53674e-07)
+scale = Vector2(5.26445, 4.72)
+shape = SubResource("RectangleShape2D_0n831")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1u04t")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = -45.0
+offset_top = -6.0
+offset_right = -5.0
+offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("3_hhp0u")
+text = "[K]"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="intract" to="." method="_on_intract_body_entered"]
+[connection signal="body_exited" from="intract" to="." method="_on_intract_body_exited"]
