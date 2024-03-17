@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cegjy42eoi3mw"]
+[gd_scene load_steps=25 format=3 uid="uid://cegjy42eoi3mw"]
 
 [ext_resource type="Script" path="res://Enemies/slime.gd" id="1_gcv1a"]
 [ext_resource type="Texture2D" uid="uid://dxdaobl6y5kdy" path="res://Enemies/sc1.png" id="2_6kqpr"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cca7d4htn62m" path="res://Enemies/player_death_zone.tscn" id="4_ic57g"]
 [ext_resource type="Texture2D" uid="uid://dfsbk4r660hc" path="res://Light2.png" id="6_xetue"]
 [ext_resource type="AudioStream" uid="uid://ct36t0airh2ej" path="res://Music and Sounds/Giants Walking.mp3" id="8_oj67f"]
+[ext_resource type="AudioStream" uid="uid://b4ikir0l1a84r" path="res://Music and Sounds/Chase.mp3" id="9_uw1qq"]
 
 [sub_resource type="Animation" id="Animation_2052n"]
 length = 0.1
@@ -603,6 +604,10 @@ panning_strength = 1.08
 wait_time = 1.5
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_uw1qq")
+volume_db = -2.666
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 

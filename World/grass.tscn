@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c208d8qdy5sbi"]
+[gd_scene load_steps=6 format=3 uid="uid://c208d8qdy5sbi"]
 
 [ext_resource type="Script" path="res://World/grass.gd" id="1_2vg3c"]
 [ext_resource type="Resource" uid="uid://qyqfafm1lbie" path="res://inventory/items/potion.tres" id="2_7ddtj"]
 [ext_resource type="Texture2D" uid="uid://w3l6h2buwfdb" path="res://inventory/items/Potion-Sprite-0003.png" id="3_8kr8o"]
+[ext_resource type="AudioStream" uid="uid://dkcd2lv604s87" path="res://Music and Sounds/InventorySFX.mp3" id="4_kgdrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewxc3"]
 size = Vector2(12, 18.5)
@@ -24,3 +25,7 @@ offset = Vector2(-15, -15)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.75)
 shape = SubResource("RectangleShape2D_ewxc3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_kgdrs")
+volume_db = 4.0

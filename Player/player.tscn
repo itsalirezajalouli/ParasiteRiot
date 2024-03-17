@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://b8erj3x5fewed"]
+[gd_scene load_steps=69 format=3 uid="uid://b8erj3x5fewed"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_vnw68"]
 [ext_resource type="Shader" uid="uid://da3f23krtweml" path="res://Player/hitflash.tres" id="2_beklb"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Player/Camera2D.gd" id="5_eqdih"]
 [ext_resource type="Texture2D" uid="uid://dbaakutxbygc6" path="res://Player/spritesheet (5).png" id="6_4p77d"]
 [ext_resource type="Texture2D" uid="uid://b5u58d2xlpce0" path="res://Player/Possessed-Sprite-0001.png" id="6_gnh8c"]
+[ext_resource type="AudioStream" uid="uid://dkcd2lv604s87" path="res://Music and Sounds/InventorySFX.mp3" id="9_fjwe1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hemx0"]
 shader = ExtResource("2_beklb")
@@ -855,9 +856,13 @@ libraries = {
 "": SubResource("AnimationLibrary_8qwyf")
 }
 
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_fjwe1")
+volume_db = 5.333
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_2rqf2")
-volume_db = 1.0
+volume_db = 2.333
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_exited" from="HurtBox" to="." method="_on_hurt_box_area_exited"]

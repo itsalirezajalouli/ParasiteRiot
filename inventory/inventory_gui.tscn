@@ -77,4 +77,4 @@ layout_mode = 2
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-113.5, -45)
 stream = ExtResource("4_7j5s7")
-volume_db = 12.0
+volume_db = 5.333

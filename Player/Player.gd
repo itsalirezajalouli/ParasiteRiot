@@ -26,6 +26,8 @@ var state = MOVE
 @onready var hitflashanimation = $HitfashAnimationPlayer
 @onready var hurtBox = $HurtBox
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
+@onready var audio_stream_player_2d_2 = $AudioStreamPlayer2D2
+
 
 const yaroo_instant = preload("res://Enemies/slime.tscn")  
 
@@ -113,6 +115,7 @@ func handleCollision():
 func _on_area_2d_body_entered(body):
 	if body.is_in_group('collectible'):
 		currentLevel.update_ui_score(body.value)
+		audio_stream_player_2d_2.play()
 		body.collect(inventory)
 
 

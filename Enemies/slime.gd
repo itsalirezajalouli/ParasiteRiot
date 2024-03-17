@@ -11,6 +11,7 @@ var detectionSpeed = global.scientistDetectionSpeed
 @onready var playerDetectionZone = $PlayerDetectionZone
 @onready var playerDeathZone = $PlayerDeathZone
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
+@onready var audio_stream_player_2d_2 = $AudioStreamPlayer2D2
 @onready var PlayerDetectionZone = $PlayerDetectionZone/CollisionPolygon2D
 @onready var PlayerDeathZone = $PlayerDeathZone/CollisionPolygon2D
 
@@ -37,7 +38,6 @@ func _ready():
 			if child.name != "Timer":
 				print(child) 
 				child.process_mode=4
-	audio_stream_player_2d.play()
 	startPosition = position
 	endPosition = endPoint.global_position
 	
