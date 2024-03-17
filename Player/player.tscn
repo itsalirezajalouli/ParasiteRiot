@@ -14,12 +14,12 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hemx0"]
 shader = ExtResource("2_beklb")
-shader_parameter/enabled = true
+shader_parameter/enabled = false
 shader_parameter/tinit = Color(0.917647, 0.0509804, 0.235294, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n21vo"]
-radius = 4.0
-height = 12.0
+radius = 5.00001
+height = 20.0
 
 [sub_resource type="Animation" id="Animation_t0m3r"]
 resource_name = "AttackDown"
@@ -403,8 +403,8 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(0, 32.3889)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uek7b"]
-radius = 7.0
-height = 18.0
+radius = 9.0
+height = 20.0
 
 [sub_resource type="Animation" id="Animation_f4ui5"]
 resource_name = "IdleDown"
@@ -794,6 +794,7 @@ texture = ExtResource("3_fs0xw")
 texture_scale = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_n21vo")
 
@@ -814,7 +815,7 @@ tree_root = SubResource("AnimationNodeStateMachine_dccr2")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Attack/blend_position = Vector2(0.000925064, -0.00484574)
 parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Run/blend_position = Vector2(0, 0)
+parameters/Run/blend_position = Vector2(0.00117505, -0.0130951)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("5_eqdih")
@@ -824,7 +825,7 @@ collision_layer = 7
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(-1, -5)
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_uek7b")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
@@ -835,6 +836,7 @@ vframes = 2
 frame = 9
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("6_gnh8c")
 hframes = 8
 

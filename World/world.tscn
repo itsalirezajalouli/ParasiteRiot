@@ -1360,7 +1360,7 @@ script = ExtResource("1_u34cw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("currentLevel") instance=ExtResource("2_3vxcb")]
 y_sort_enabled = true
-position = Vector2(1350, -1062)
+position = Vector2(-32, -344)
 currentLevel = NodePath("..")
 
 [node name="TileMap" type="TileMap" parent="."]
