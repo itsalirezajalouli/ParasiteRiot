@@ -1589,7 +1589,7 @@ position = Vector2(8, 0)
 
 [node name="slime" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(-192, -64)
-id = "bob"
+id = "Bob"
 
 [node name="Marker2D" parent="slimes/slime" index="10"]
 position = Vector2(264, 8)
@@ -1628,6 +1628,80 @@ libraries = {
 "": SubResource("AnimationLibrary_ph8af")
 }
 
+[node name="slime14" parent="slimes" instance=ExtResource("4_804nt")]
+position = Vector2(1664, 768)
+id = "Jezebel"
+
+[node name="Label" parent="slimes/slime14" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" parent="slimes/slime14" index="2"]
+scale = Vector2(0.8, 1.1)
+texture = ExtResource("5_guq6s")
+hframes = 32
+vframes = 1
+frame = 1
+
+[node name="HitBox" parent="slimes/slime14" index="5"]
+scale = Vector2(1.13157, 0.811466)
+
+[node name="CollisionShape2D" parent="slimes/slime14/HitBox" index="0"]
+scale = Vector2(1.64979, 0.480017)
+
+[node name="PlayerDeathZone2" parent="slimes/slime14" index="6"]
+script = null
+
+[node name="CollisionPolygon2D" parent="slimes/slime14/PlayerDetectionZone" index="0"]
+polygon = PackedVector2Array(0, -2, -151.111, 53.3328, -115.556, 133.333, 8.88834, 151.111, 133.333, 124.445, 151.111, 35.5562)
+
+[node name="CollisionPolygon2D" parent="slimes/slime14/PlayerDeathZone" index="0"]
+scale = Vector2(1, 1.32)
+
+[node name="Marker2D" parent="slimes/slime14" index="10"]
+position = Vector2(-200, 8)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="slimes/slime14"]
+libraries = {
+"": SubResource("AnimationLibrary_ph8af")
+}
+
+[node name="slime15" parent="slimes" instance=ExtResource("4_804nt")]
+position = Vector2(824, -1000)
+id = "Delilah"
+
+[node name="Label" parent="slimes/slime15" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" parent="slimes/slime15" index="2"]
+scale = Vector2(0.8, 1.1)
+texture = ExtResource("5_guq6s")
+hframes = 32
+vframes = 1
+frame = 1
+
+[node name="HitBox" parent="slimes/slime15" index="5"]
+scale = Vector2(1.13157, 0.811466)
+
+[node name="CollisionShape2D" parent="slimes/slime15/HitBox" index="0"]
+scale = Vector2(1.64979, 0.480017)
+
+[node name="PlayerDeathZone2" parent="slimes/slime15" index="6"]
+script = null
+
+[node name="CollisionPolygon2D" parent="slimes/slime15/PlayerDetectionZone" index="0"]
+polygon = PackedVector2Array(0, -2, -151.111, 53.3328, -115.556, 133.333, 8.88834, 151.111, 133.333, 124.445, 151.111, 35.5562)
+
+[node name="CollisionPolygon2D" parent="slimes/slime15/PlayerDeathZone" index="0"]
+scale = Vector2(1, 1.32)
+
+[node name="Marker2D" parent="slimes/slime15" index="10"]
+position = Vector2(8, 248)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="slimes/slime15"]
+libraries = {
+"": SubResource("AnimationLibrary_ph8af")
+}
+
 [node name="slime3" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(112, 72)
 id = "terry"
@@ -1635,39 +1709,23 @@ id = "terry"
 [node name="Marker2D" parent="slimes/slime3" index="10"]
 position = Vector2(8, 256)
 
-[node name="slime8" parent="slimes" instance=ExtResource("4_804nt")]
-position = Vector2(1672, 800)
-id = "Scott"
-
-[node name="Label" parent="slimes/slime8" index="0"]
-metadata/_edit_use_anchors_ = true
-
-[node name="Marker2D" parent="slimes/slime8" index="10"]
-position = Vector2(-216, 0)
-
 [node name="slime7" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(1112, -152)
+id = "Scott"
 
 [node name="Marker2D" parent="slimes/slime7" index="10"]
 position = Vector2(-312, 184)
 
 [node name="slime11" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(1224, -456)
+id = "Joaquin"
 
 [node name="Marker2D" parent="slimes/slime11" index="10"]
 position = Vector2(-304, 6)
 
-[node name="slime12" parent="slimes" instance=ExtResource("4_804nt")]
-position = Vector2(826, -944)
-
-[node name="Sprite2D" parent="slimes/slime12" index="2"]
-position = Vector2(0, -24)
-
-[node name="Marker2D" parent="slimes/slime12" index="10"]
-position = Vector2(0, 184)
-
 [node name="slime13" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(1240, -1096)
+id = "Ace"
 
 [node name="Sprite2D" parent="slimes/slime13" index="2"]
 position = Vector2(0, -24)
@@ -1677,12 +1735,14 @@ position = Vector2(-449, 0)
 
 [node name="slime10" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(1640, 96)
+id = "Flash"
 
 [node name="Marker2D" parent="slimes/slime10" index="10"]
 position = Vector2(0, -208)
 
 [node name="slime9" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(1288, -120)
+id = "Kenneth"
 
 [node name="Marker2D" parent="slimes/slime9" index="10"]
 position = Vector2(0, 232)
@@ -1696,12 +1756,14 @@ position = Vector2(-200, 16)
 
 [node name="slime5" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(320, 840)
+id = "Xavier"
 
 [node name="Marker2D" parent="slimes/slime5" index="10"]
 position = Vector2(0, 248)
 
 [node name="slime6" parent="slimes" instance=ExtResource("4_804nt")]
 position = Vector2(736, 1096)
+id = "Braxton"
 
 [node name="Marker2D" parent="slimes/slime6" index="10"]
 position = Vector2(0, -264)
@@ -2695,9 +2757,6 @@ position = Vector2(1952, -608)
 [node name="StaticBody2D262" parent="Walls Group1" instance=ExtResource("11_cw71f")]
 position = Vector2(2080, -736)
 
-[node name="StaticBody2D220" parent="Walls Group1" instance=ExtResource("11_cw71f")]
-position = Vector2(1632, 672)
-
 [node name="StaticBody2D84" parent="Walls Group1" instance=ExtResource("11_cw71f")]
 position = Vector2(224, 736)
 
@@ -3073,7 +3132,7 @@ gate_id = "Scott"
 
 [node name="Gate4" parent="." instance=ExtResource("17_dmese")]
 position = Vector2(864, -608)
-gate_id = "Alex"
+gate_id = "Joaquin"
 
 [node name="Gate2" parent="." instance=ExtResource("17_dmese")]
 position = Vector2(480, 96)
@@ -3632,14 +3691,18 @@ offset_bottom = 15.0
 [editable path="slimes/slime2/PlayerDeathZone2"]
 [editable path="slimes/slime2/PlayerDetectionZone"]
 [editable path="slimes/slime2/PlayerDeathZone"]
+[editable path="slimes/slime14"]
+[editable path="slimes/slime14/PlayerDeathZone2"]
+[editable path="slimes/slime14/PlayerDetectionZone"]
+[editable path="slimes/slime14/PlayerDeathZone"]
+[editable path="slimes/slime15"]
+[editable path="slimes/slime15/PlayerDeathZone2"]
+[editable path="slimes/slime15/PlayerDetectionZone"]
+[editable path="slimes/slime15/PlayerDeathZone"]
 [editable path="slimes/slime3"]
 [editable path="slimes/slime3/PlayerDeathZone2"]
 [editable path="slimes/slime3/PlayerDetectionZone"]
 [editable path="slimes/slime3/PlayerDeathZone"]
-[editable path="slimes/slime8"]
-[editable path="slimes/slime8/PlayerDeathZone2"]
-[editable path="slimes/slime8/PlayerDetectionZone"]
-[editable path="slimes/slime8/PlayerDeathZone"]
 [editable path="slimes/slime7"]
 [editable path="slimes/slime7/PlayerDeathZone2"]
 [editable path="slimes/slime7/PlayerDetectionZone"]
@@ -3648,10 +3711,6 @@ offset_bottom = 15.0
 [editable path="slimes/slime11/PlayerDeathZone2"]
 [editable path="slimes/slime11/PlayerDetectionZone"]
 [editable path="slimes/slime11/PlayerDeathZone"]
-[editable path="slimes/slime12"]
-[editable path="slimes/slime12/PlayerDeathZone2"]
-[editable path="slimes/slime12/PlayerDetectionZone"]
-[editable path="slimes/slime12/PlayerDeathZone"]
 [editable path="slimes/slime13"]
 [editable path="slimes/slime13/PlayerDeathZone2"]
 [editable path="slimes/slime13/PlayerDetectionZone"]
