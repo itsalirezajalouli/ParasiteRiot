@@ -9,8 +9,10 @@ extends StaticBody2D
 func _ready():
 	
 	if gate_id=="none":
+			label.visible = false
 			label.text = '[K]'
 	else:
+		label.visible = false
 		label.text = '[K] Only ' + str(gate_id)
 
 

@@ -1,13 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dd364r2bh7d8x"]
+[gd_scene load_steps=10 format=3 uid="uid://2jclmwoffnjn"]
 
-[ext_resource type="Script" path="res://Gate.gd" id="1_whq2h"]
-[ext_resource type="Texture2D" uid="uid://b3cxx1uicqot8" path="res://World/DoorSheet.png" id="2_3tq0g"]
-[ext_resource type="FontFile" uid="uid://b8253e5gv0ngi" path="res://Font/superstar_memesbruh03.ttf" id="3_ob440"]
+[ext_resource type="Script" path="res://vgate.gd" id="1_p4m2k"]
+[ext_resource type="Texture2D" uid="uid://2co142xxoy0t" path="res://World/VDoorSheet.png" id="2_73yre"]
+[ext_resource type="FontFile" uid="uid://b8253e5gv0ngi" path="res://Font/superstar_memesbruh03.ttf" id="3_4k4bn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxm45"]
-size = Vector2(44.2347, 10.3863)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6355"]
+size = Vector2(9.38313, 20.7727)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqi5i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n831"]
 
 [sub_resource type="Animation" id="Animation_wbkm7"]
 length = 0.001
@@ -63,24 +63,29 @@ _data = {
 "open": SubResource("Animation_vrvv1")
 }
 
-[node name="Gate" type="StaticBody2D"]
-script = ExtResource("1_whq2h")
+[node name="vgate" type="StaticBody2D"]
+position = Vector2(-3, 0)
+script = ExtResource("1_p4m2k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_3tq0g")
+position = Vector2(-23, 0)
+texture = ExtResource("2_73yre")
+flip_h = true
 hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
+visible = false
+position = Vector2(5, -3.24249e-05)
 scale = Vector2(1.49204, 3.08097)
-shape = SubResource("RectangleShape2D_fxm45")
+shape = SubResource("RectangleShape2D_r6355")
 
 [node name="intract" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="intract"]
+visible = false
 position = Vector2(0, 9.53674e-07)
 scale = Vector2(5.26445, 4.72)
-shape = SubResource("RectangleShape2D_sqi5i")
+shape = SubResource("RectangleShape2D_0n831")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -88,19 +93,11 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -55.0
-offset_right = 20.0
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(20, 9)
-theme_override_fonts/font = ExtResource("3_ob440")
+offset_left = 17.0
+offset_top = -6.0
+offset_right = 57.0
+offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("3_4k4bn")
 text = "[K]"
 horizontal_alignment = 1
 
