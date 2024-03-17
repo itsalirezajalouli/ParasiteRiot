@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj05jugbg6ea6"]
+
+[ext_resource type="Texture2D" uid="uid://bitq7dbpr7jos" path="res://UI/grid.png" id="1_0mox1"]
+[ext_resource type="Script" path="res://menu.gd" id="1_ju7vu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 184.0
+color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.117647)
+position = Vector2(160, 90)
+texture = ExtResource("1_0mox1")
+
+[node name="menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 24.0
+offset_right = 179.0
+offset_bottom = 160.0
+script = ExtResource("1_ju7vu")
+
+[node name="1" type="Button" parent="menu"]
+layout_mode = 2
+disabled = true
+text = "1"
+
+[node name="2" type="Button" parent="menu"]
+layout_mode = 2
+disabled = true
+text = "2"
+
+[node name="3" type="Button" parent="menu"]
+layout_mode = 2
+disabled = true
+text = "3"
+
+[node name="4" type="Button" parent="menu"]
+layout_mode = 2
+disabled = true
+text = "4"
+
+[node name="back" type="Button" parent="."]

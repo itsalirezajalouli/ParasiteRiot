@@ -13,7 +13,7 @@ func _on_quit_pressed():
 
 
 func _on_levels_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file('res://level_select.tscn')
 
 
 func _on_start_pressed():

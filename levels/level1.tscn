@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4b8j2r8xkh00"]
+
+[ext_resource type="PackedScene" uid="uid://c3mykjk85crq8" path="res://World/world2.tscn" id="1_hi3uw"]
+[ext_resource type="PackedScene" uid="uid://dtdmls5ttus6i" path="res://ui.tscn" id="2_6r5iy"]
+[ext_resource type="PackedScene" uid="uid://ddkf1y2lskp2b" path="res://inventory/inventory_gui.tscn" id="3_xr3mv"]
+[ext_resource type="PackedScene" uid="uid://dogxiw7j046ui" path="res://UI/pause_gui.tscn" id="4_gxqgy"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Ui" parent="." instance=ExtResource("2_6r5iy")]
+unique_name_in_owner = true
+process_mode = 3
+
+[node name="InventoryGui" parent="Ui" instance=ExtResource("3_xr3mv")]
+
+[node name="Pause" parent="Ui" instance=ExtResource("4_gxqgy")]
+
+[node name="Level" parent="." instance=ExtResource("1_hi3uw")]
