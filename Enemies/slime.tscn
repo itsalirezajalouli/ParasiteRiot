@@ -504,6 +504,7 @@ radius = 98.4196
 height = 212.5
 
 [node name="Scientist" type="CharacterBody2D"]
+z_index = -1
 y_sort_enabled = true
 position = Vector2(0, 1)
 collision_layer = 2
@@ -537,7 +538,6 @@ hframes = 8
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 y_sort_enabled = true
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_gspmy")
@@ -553,35 +553,28 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-visible = false
 position = Vector2(1, 62.5)
 scale = Vector2(1.22943, 0.679982)
 shape = SubResource("CapsuleShape2D_edrog")
 
 [node name="PlayerDeathZone2" parent="." instance=ExtResource("3_eqm8b")]
-visible = false
 
 [node name="CollisionPolygon2D" parent="PlayerDeathZone2" index="0"]
-visible = false
 polygon = PackedVector2Array(0, -1, 60, -18, -1, -52, -56, -18)
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource("3_vk66i")]
-visible = false
 collision_mask = 8
 
 [node name="CollisionPolygon2D" parent="PlayerDetectionZone" index="0"]
-visible = false
 scale = Vector2(0.9, 0.9)
 polygon = PackedVector2Array(0, -2, -148.889, 44.4444, -76.6667, 118.889, -1.11111, 143.333, 76.6667, 122.222, 146.667, 37.7778)
 
 [node name="PlayerDeathZone" parent="." instance=ExtResource("4_ic57g")]
 
 [node name="CollisionPolygon2D" parent="PlayerDeathZone" index="0"]
-visible = false
 polygon = PackedVector2Array(-1, -1, 28, -4, 26, 20, 0, 33, -25, 18, -29, -4)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
 light_mask = 31
 z_index = -2
 y_sort_enabled = true

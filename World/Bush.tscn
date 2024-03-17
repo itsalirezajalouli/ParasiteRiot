@@ -6,6 +6,7 @@
 size = Vector2(65.5001, 70)
 
 [node name="Bush" type="StaticBody2D"]
+y_sort_enabled = true
 position = Vector2(0, -5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

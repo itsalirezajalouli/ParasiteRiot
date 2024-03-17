@@ -100,6 +100,7 @@ offset_bottom = 17.0
 theme_override_fonts/font = ExtResource("3_4k4bn")
 text = "[K]"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="intract" to="." method="_on_intract_body_entered"]
 [connection signal="body_exited" from="intract" to="." method="_on_intract_body_exited"]

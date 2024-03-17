@@ -1381,7 +1381,6 @@ id = "Bob"
 position = Vector2(264, 8)
 
 [node name="slime2" parent="slimes" instance=ExtResource("4_804nt")]
-z_index = -1
 position = Vector2(120, 96)
 id = "Terry"
 
@@ -1472,16 +1471,12 @@ id = "Dave"
 position = Vector2(0, -264)
 
 [node name="Bush" parent="." instance=ExtResource("2_5e8wp")]
-z_index = 2
-y_sort_enabled = true
 position = Vector2(-32, 16)
 
 [node name="Bush3" parent="." instance=ExtResource("2_5e8wp")]
-y_sort_enabled = true
 position = Vector2(256, 976)
 
 [node name="Bush5" parent="." instance=ExtResource("2_5e8wp")]
-y_sort_enabled = true
 position = Vector2(1472, 8)
 
 [node name="Grasses" type="Node2D" parent="."]
@@ -1535,7 +1530,6 @@ position = Vector2(288, 736)
 position = Vector2(-352, 416)
 
 [node name="StaticBody2D49" parent="Walls Group1" instance=ExtResource("5_yhgdx")]
-z_index = 2
 position = Vector2(416, 96)
 
 [node name="StaticBody2D50" parent="Walls Group1" instance=ExtResource("5_yhgdx")]
@@ -2846,7 +2840,6 @@ position = Vector2(864, -608)
 gate_id = "Alex"
 
 [node name="Gate2" parent="." instance=ExtResource("17_dmese")]
-z_index = 5
 position = Vector2(480, 96)
 gate_id = "Bob"
 
@@ -2907,11 +2900,6 @@ position = Vector2(1632, -176)
 [node name="StaticBody2D10" parent="." instance=ExtResource("3_ln3qp")]
 z_index = -5
 position = Vector2(511, 96)
-
-[node name="StaticBody2D11" parent="." instance=ExtResource("3_ln3qp")]
-z_index = 1
-position = Vector2(448, 96)
-rotation = -3.14159
 
 [node name="StaticBody2D12" parent="." instance=ExtResource("3_ln3qp")]
 z_index = -5
