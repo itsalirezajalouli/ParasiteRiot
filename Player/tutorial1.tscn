@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://db46invpws2v0"]
+
+[ext_resource type="PackedScene" uid="uid://ck7c3duobjq8e" path="res://Player/tutorial.tscn" id="1_nsoep"]
+[ext_resource type="Texture2D" uid="uid://w3l6h2buwfdb" path="res://inventory/items/Potion-Sprite-0003.png" id="2_lph3w"]
+
+[node name="CanvasLayer" instance=ExtResource("1_nsoep")]
+
+[node name="Sprite2D4" type="Sprite2D" parent="." index="4"]
+position = Vector2(80, 96)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_lph3w")
+
+[node name="Label2" parent="." index="5"]
+anchor_left = 0.4125
+text = "speed potion:
+
+when you use this potion your speed
+increases for 5 seconds.
+this can help you run from
+scientists."
+
+[node name="start" parent="." index="6"]
+anchor_left = 0.5
+anchor_top = -0.0388889
+
+[node name="Sprite2D" parent="." index="7"]
+visible = false

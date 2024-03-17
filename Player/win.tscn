@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpt5ds02hekbs"]
+
+[ext_resource type="PackedScene" uid="uid://da1c0vlncs7bq" path="res://gameover.tscn" id="1_3b0yq"]
+[ext_resource type="Texture2D" uid="uid://cv4otb0e2mq0t" path="res://UI/box2.png" id="2_hdyej"]
+[ext_resource type="Texture2D" uid="uid://82wvbndxm41t" path="res://Enemies/Alien2-Sprite-idle.png" id="3_c5ulp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlvag"]
+bg_color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4in2k"]
+bg_color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqtym"]
+bg_color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+
+[sub_resource type="Animation" id="Animation_xa0iw"]
+resource_name = "idle"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_ytt5c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nnuqk"]
+_data = {
+"RESET": SubResource("Animation_ytt5c"),
+"idle": SubResource("Animation_xa0iw")
+}
+
+[node name="gameover" instance=ExtResource("1_3b0yq")]
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(0.0823529, 1, 0.643137, 1)
+
+[node name="Sprite2D3" parent="." index="2"]
+texture = ExtResource("2_hdyej")
+
+[node name="Label" parent="." index="3"]
+theme_override_colors/font_color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+text = "Your friend is free now!"
+
+[node name="retry" parent="." index="4"]
+theme_override_colors/font_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_pressed_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_hover_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_focus_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_disabled_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_dlvag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dlvag")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dlvag")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_dlvag")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dlvag")
+text = "REplay"
+
+[node name="quit" parent="." index="5"]
+theme_override_colors/font_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_pressed_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_hover_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_focus_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_disabled_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_4in2k")
+
+[node name="main menu" parent="." index="6"]
+theme_override_colors/font_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_pressed_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_hover_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_focus_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_colors/font_disabled_color = Color(0.0823529, 1, 0.643137, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nqtym")
+
+[node name="Sprite2D" parent="." index="7"]
+position = Vector2(101, 104)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="9"]
+root_node = NodePath("../Sprite2D4")
+libraries = {
+"": SubResource("AnimationLibrary_nnuqk")
+}
+
+[node name="Sprite2D4" type="Sprite2D" parent="." index="10"]
+position = Vector2(147, 102)
+texture = ExtResource("3_c5ulp")
+hframes = 15

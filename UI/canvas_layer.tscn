@@ -56,6 +56,7 @@ script = ExtResource("1_0t8bf")
 offset_right = 320.0
 offset_bottom = 184.0
 color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.117647)
@@ -81,6 +82,7 @@ theme_override_font_sizes/font_size = 24
 text = "Parasite Riot"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="start" type="Button" parent="."]
 anchors_preset = 5
@@ -103,6 +105,7 @@ theme_override_styles/hover = ExtResource("2_4nf7d")
 theme_override_styles/pressed = ExtResource("2_4nf7d")
 theme_override_styles/focus = ExtResource("2_4nf7d")
 text = "start"
+metadata/_edit_use_anchors_ = true
 
 [node name="levels" type="Button" parent="."]
 anchors_preset = 5
@@ -126,6 +129,7 @@ theme_override_styles/hover = ExtResource("2_4nf7d")
 theme_override_styles/pressed = ExtResource("2_4nf7d")
 theme_override_styles/focus = ExtResource("2_4nf7d")
 text = "levels"
+metadata/_edit_use_anchors_ = true
 
 [node name="quit" type="Button" parent="."]
 anchors_preset = 5
@@ -148,6 +152,7 @@ theme_override_styles/hover = ExtResource("2_4nf7d")
 theme_override_styles/pressed = ExtResource("2_4nf7d")
 theme_override_styles/focus = ExtResource("2_4nf7d")
 text = "QUIT"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="."]
 anchors_preset = 5
@@ -164,6 +169,7 @@ theme_override_font_sizes/font_size = 8
 text = "[soon]"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(128, 104)
@@ -199,6 +205,7 @@ theme_override_styles/hover = ExtResource("2_4nf7d")
 theme_override_styles/pressed = ExtResource("2_4nf7d")
 theme_override_styles/focus = ExtResource("2_4nf7d")
 text = "tutorial"
+metadata/_edit_use_anchors_ = true
 
 [node name="creators" type="Button" parent="."]
 anchors_preset = 5
@@ -222,6 +229,7 @@ theme_override_styles/hover = ExtResource("2_4nf7d")
 theme_override_styles/pressed = ExtResource("2_4nf7d")
 theme_override_styles/focus = ExtResource("2_4nf7d")
 text = "creators"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="levels" to="." method="_on_levels_pressed"]

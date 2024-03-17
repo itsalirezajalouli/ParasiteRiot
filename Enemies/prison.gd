@@ -28,4 +28,4 @@ func _on_interact():
 
 
 func _on_timer_timeout():
-	get_tree().change_scene_to_file("res://UI/canvas_layer.tscn")
+	get_tree().change_scene_to_file("res://Player/win.tscn")

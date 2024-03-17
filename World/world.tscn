@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b41txu0l84nt1"]
+[gd_scene load_steps=34 format=3 uid="uid://b41txu0l84nt1"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_u34cw"]
 [ext_resource type="PackedScene" uid="uid://b8erj3x5fewed" path="res://Player/player.tscn" id="2_3vxcb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cegjy42eoi3mw" path="res://Enemies/slime.tscn" id="4_804nt"]
 [ext_resource type="Texture2D" uid="uid://ba2l11gweqy1" path="res://World/Tileset.png" id="4_ckb7d"]
 [ext_resource type="Texture2D" uid="uid://d3piwid2ydhm3" path="res://Enemies/spritesheet (8).png" id="5_guq6s"]
+[ext_resource type="Texture2D" uid="uid://bnx0nf8lqxh0b" path="res://World/spritesheet (10).png" id="5_pd43r"]
 [ext_resource type="PackedScene" uid="uid://bskqor2mp2pa8" path="res://World/walls.tscn" id="5_yhgdx"]
 [ext_resource type="PackedScene" uid="uid://dejx1iftqd85f" path="res://World/chest.tscn" id="7_ecwa0"]
 [ext_resource type="PackedScene" uid="uid://cyblhhxquj6lx" path="res://World/walls3.tscn" id="11_cw71f"]
@@ -1574,7 +1575,7 @@ script = ExtResource("1_u34cw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("currentLevel") instance=ExtResource("2_3vxcb")]
 y_sort_enabled = true
-position = Vector2(1456, -1072)
+position = Vector2(608, 200)
 currentLevel = NodePath("..")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1601,7 +1602,7 @@ id = "jane"
 
 [node name="Sprite2D" parent="slimes/slime2" index="2"]
 scale = Vector2(0.8, 1.1)
-texture = ExtResource("5_guq6s")
+texture = ExtResource("5_pd43r")
 hframes = 32
 vframes = 1
 frame = 1

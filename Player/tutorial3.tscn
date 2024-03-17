@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://muqmoxn5yusu"]
+
+[ext_resource type="PackedScene" uid="uid://s0s5srawkscf" path="res://Player/tutorial2.tscn" id="1_805kd"]
+[ext_resource type="Texture2D" uid="uid://bf8a6m86k00ax" path="res://inventory/items/Potion-Sprite-0002.png" id="2_f353y"]
+
+[node name="CanvasLayer" instance=ExtResource("1_805kd")]
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+
+[node name="Sprite2D4" parent="." index="4"]
+texture = ExtResource("2_f353y")
+
+[node name="Label2" parent="." index="5"]
+text = "stun potion:
+
+after using this potion, scientists
+will be stunned and slowed for
+5 seconds and they can't reach you."

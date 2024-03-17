@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://s0s5srawkscf"]
+
+[ext_resource type="PackedScene" uid="uid://db46invpws2v0" path="res://Player/tutorial1.tscn" id="1_o6r1f"]
+[ext_resource type="Texture2D" uid="uid://cxfkjpyxiauoc" path="res://inventory/items/Potion-Sprite-0001.png" id="2_kah27"]
+
+[node name="CanvasLayer" instance=ExtResource("1_o6r1f")]
+
+[node name="Label" parent="." index="3"]
+theme_override_colors/font_color = Color(0.0823529, 1, 0.643137, 1)
+
+[node name="Sprite2D4" parent="." index="4"]
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("2_kah27")
+
+[node name="Label2" parent="." index="5"]
+text = "invisibility potion:
+
+when you use this one for 5 seconds
+no scientist can detect or
+attack you.
+"
