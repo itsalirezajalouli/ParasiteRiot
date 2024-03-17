@@ -61,7 +61,6 @@ shape = SubResource("RectangleShape2D_gp1yp")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_p3kun")]
 collision_layer = 4
-action_name = "open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, -0.5)

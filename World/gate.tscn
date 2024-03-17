@@ -101,7 +101,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(20, 9)
 theme_override_fonts/font = ExtResource("3_ob440")
-text = "[K]"
+text = "[K] open"
 horizontal_alignment = 1
 
 [connection signal="body_entered" from="intract" to="." method="_on_intract_body_entered"]

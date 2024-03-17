@@ -4,7 +4,7 @@ extends StaticBody2D
 @onready var sprite = $Sprite2D
 @onready var animations = $AnimationPlayer
 
-const invpotion_instant =  preload("res://inventory/items/potion2.tscn")
+const speedpotion_instant = preload("res://inventory/items/potion2.tscn")
 
 @export var animation_played = false
 
@@ -13,10 +13,10 @@ func _ready():
 	
 func _on_interact():
 	if animation_played == false:
-		var invpotion = invpotion_instant.instantiate()  
-		get_parent().add_child(invpotion)
-		invpotion.position = position
-		invpotion.position.x -= 20
-		invpotion.position.y += 15
+		var speedpotion = speedpotion_instant.instantiate()  
+		get_parent().add_child(speedpotion)
+		speedpotion.position = position
+		speedpotion.position.x -= 20
+		speedpotion.position.y += 15
 		animations.play('open')
 	animation_played = true

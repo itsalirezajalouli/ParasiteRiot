@@ -11,6 +11,7 @@ const FRICTION = 700
 @onready var sprite_2d_3 = $Sprite2D3
 @export var camera_shake = false
 @export var inventory: Inventory
+@onready var label = $Label
 
 enum {
   MOVE,
@@ -34,6 +35,7 @@ const yaroo_instant = preload("res://Enemies/slime.tscn")
 func _ready():
 	sprite_2d_2.hide()
 	sprite_2d_3.hide()
+	label.hide()
 	animationTree.active = true
 	hitflashanimation.play("RESET")
 
@@ -45,7 +47,7 @@ func _process(delta):
 		modulate.a = 0.4
 	else:
 		modulate.a = 1
-	if global.type !="none" and Input.is_action_just_pressed("interact") and animationPlayer==$AnimationPlayer_yaroo :
+	if global.type !="none" and Input.is_action_just_pressed("gate") and animationPlayer==$AnimationPlayer_yaroo :
 		var yaroo = yaroo_instant.instantiate()  
 		get_parent().add_child(yaroo)
 		yaroo.position = position
@@ -57,13 +59,17 @@ func _process(delta):
 		animationPlayer = $AnimationPlayer
 		animationTree  = $AnimationTree
 		animationState = animationTree.get('parameters/playback')
+		label.hide()
 	if global.type != "none" and animationPlayer!=$AnimationPlayer_yaroo:
+		
 		sprite_2d.hide()
 		sprite_2d_2.hide()
 		sprite_2d_3.show()
 		animationPlayer = $AnimationPlayer_yaroo
 		animationTree  = $AnimationTree_yaroo
 		animationState = animationTree.get('parameters/playback')
+		label.show()
+		label.text = '[k] detach'
 	animationTree.active = true
 	handleCollision()
 	match state:

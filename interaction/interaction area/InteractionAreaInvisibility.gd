@@ -1,5 +1,5 @@
 extends Area2D
-class_name InteractionAreaInvisibility
+class_name InteractionArea
 
 @export var action_name: String = 'interact'
 
@@ -7,14 +7,9 @@ var interact: Callable = func():
 	pass
 
 
-
-
-
 func _on_body_entered(body):
-	Invismanager.register_area(self)
+	InteractionManager.register_area(self)
 
 
 func _on_body_exited(body):
-	Invismanager.unregister_area(self)
-
-	
+	InteractionManager.unregister_area(self)

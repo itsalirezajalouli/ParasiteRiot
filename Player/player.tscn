@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://b8erj3x5fewed"]
+[gd_scene load_steps=70 format=3 uid="uid://b8erj3x5fewed"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_vnw68"]
 [ext_resource type="Shader" uid="uid://da3f23krtweml" path="res://Player/hitflash.tres" id="2_beklb"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dbaakutxbygc6" path="res://Player/spritesheet (5).png" id="6_4p77d"]
 [ext_resource type="Texture2D" uid="uid://b5u58d2xlpce0" path="res://Player/Possessed-Sprite-0001.png" id="6_gnh8c"]
 [ext_resource type="AudioStream" uid="uid://dkcd2lv604s87" path="res://Music and Sounds/InventorySFX.mp3" id="9_fjwe1"]
+[ext_resource type="FontFile" uid="uid://b8253e5gv0ngi" path="res://Font/superstar_memesbruh03.ttf" id="11_kh52s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hemx0"]
 shader = ExtResource("2_beklb")
@@ -863,6 +864,23 @@ volume_db = 5.333
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_2rqf2")
 volume_db = 2.333
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -56.0
+offset_right = 20.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_kh52s")
+theme_override_font_sizes/font_size = 14
+text = "Yo"
+horizontal_alignment = 1
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_exited" from="HurtBox" to="." method="_on_hurt_box_area_exited"]
