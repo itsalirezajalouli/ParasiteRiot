@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://5pg5wepp2b4p"]
 
-[ext_resource type="Script" path="res://vgate.gd" id="1_fikoo"]
+[ext_resource type="Script" path="res://World/vugate.gd" id="1_v3nkc"]
 [ext_resource type="Texture2D" uid="uid://2co142xxoy0t" path="res://World/VDoorSheet.png" id="2_gm8ne"]
 [ext_resource type="FontFile" uid="uid://b8253e5gv0ngi" path="res://Font/superstar_memesbruh03.ttf" id="3_hhp0u"]
 
@@ -65,7 +65,7 @@ _data = {
 
 [node name="vgate" type="StaticBody2D"]
 position = Vector2(-3, 0)
-script = ExtResource("1_fikoo")
+script = ExtResource("1_v3nkc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(35, 0)

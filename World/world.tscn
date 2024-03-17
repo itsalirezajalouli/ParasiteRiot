@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b41txu0l84nt1"]
+[gd_scene load_steps=25 format=3 uid="uid://b41txu0l84nt1"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_u34cw"]
 [ext_resource type="PackedScene" uid="uid://b8erj3x5fewed" path="res://Player/player.tscn" id="2_3vxcb"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cyqnf8ha1jvy0" path="res://World/chest_slo.tscn" id="20_ulm1i"]
 [ext_resource type="PackedScene" uid="uid://5pg5wepp2b4p" path="res://World/vugate.tscn" id="21_0cm7i"]
 [ext_resource type="PackedScene" uid="uid://bj1bjsawkiv4h" path="res://World/table3.tscn" id="21_fs7fi"]
+[ext_resource type="PackedScene" uid="uid://dk0ty8u2fu7a" path="res://World/computer.tscn" id="22_udova"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cqq8e"]
 texture = ExtResource("4_ckb7d")
@@ -1359,7 +1360,7 @@ script = ExtResource("1_u34cw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("currentLevel") instance=ExtResource("2_3vxcb")]
 y_sort_enabled = true
-position = Vector2(-34, -359)
+position = Vector2(1350, -1062)
 currentLevel = NodePath("..")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1395,8 +1396,8 @@ id = "Jack"
 position = Vector2(-304, 8)
 
 [node name="slime8" parent="slimes" instance=ExtResource("4_804nt")]
-position = Vector2(1680, 752)
-id = "Jack"
+position = Vector2(3048, 85)
+id = "Scott"
 
 [node name="Marker2D" parent="slimes/slime8" index="10"]
 position = Vector2(-216, 16)
@@ -2834,6 +2835,7 @@ rotation = -3.14159
 
 [node name="Gate3" parent="." instance=ExtResource("17_dmese")]
 position = Vector2(1504, -224)
+gate_id = "Scott"
 
 [node name="Gate4" parent="." instance=ExtResource("17_dmese")]
 position = Vector2(864, -608)
@@ -3303,7 +3305,7 @@ position = Vector2(448, 968)
 position = Vector2(2032, -600)
 
 [node name="Chest_Speed5" parent="." instance=ExtResource("7_ecwa0")]
-position = Vector2(1472, 72)
+position = Vector2(1472, 88)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("20_tmctw")]
 position = Vector2(-32, -160)
@@ -3378,6 +3380,9 @@ position = Vector2(1120, -1120)
 
 [node name="StaticBody2D116" parent="." instance=ExtResource("20_tmctw")]
 position = Vector2(1632, -1056)
+
+[node name="Computer" parent="." instance=ExtResource("22_udova")]
+position = Vector2(1698, 736)
 
 [editable path="slimes/slime"]
 [editable path="slimes/slime/PlayerDeathZone2"]

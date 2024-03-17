@@ -132,6 +132,10 @@ func removeItem():
 			global.scientistSpeed = 20
 			global.scientistDetectionSpeed = 20
 			itemInHand.queue_free()
+			
+		if itemInHand.inventorySlot.item.name == 'Card':
+			global.Card_used = true
+			itemInHand.queue_free()
 
 func _input(event):
 	if itemInHand && Input.is_action_just_pressed('rightClick'):

@@ -15,3 +15,4 @@ var can_interact = true
 var can_interact_inv = true
 var can_interact_slow = true
 var eyes = 0
+var Card_used = false
