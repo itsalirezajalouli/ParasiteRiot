@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bp7yqi7gbdwyy" path="res://interaction/interaction area/interaction_area.tscn" id="3_p3kun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gp1yp"]
-size = Vector2(16, 24)
+size = Vector2(55.9998, 62.0002)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nd7is"]
+size = Vector2(29.6166, 11.246)
 
 [sub_resource type="Animation" id="Animation_0hf33"]
 length = 0.001

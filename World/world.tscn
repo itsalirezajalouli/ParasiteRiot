@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b41txu0l84nt1"]
+[gd_scene load_steps=33 format=3 uid="uid://b41txu0l84nt1"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_u34cw"]
 [ext_resource type="PackedScene" uid="uid://b8erj3x5fewed" path="res://Player/player.tscn" id="2_3vxcb"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://5pg5wepp2b4p" path="res://World/vugate.tscn" id="21_0cm7i"]
 [ext_resource type="PackedScene" uid="uid://bj1bjsawkiv4h" path="res://World/table3.tscn" id="21_fs7fi"]
 [ext_resource type="PackedScene" uid="uid://dk0ty8u2fu7a" path="res://World/computer.tscn" id="22_udova"]
+[ext_resource type="PackedScene" uid="uid://b5gjq0larp5we" path="res://Enemies/prison.tscn" id="24_ol5ky"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cqq8e"]
 texture = ExtResource("4_ckb7d")
@@ -1355,47 +1356,6 @@ terrain_set_0/terrain_1/name = "corners"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_cqq8e")
 
-[sub_resource type="Animation" id="Animation_teob8"]
-resource_name = "WalkDown"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [1, 2, 3, 4, 5, 6, 7, 0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.8, 1.1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-5, -21)]
-}
-
 [sub_resource type="Animation" id="Animation_x4g4t"]
 length = 0.001
 tracks/0/type = "value"
@@ -1435,8 +1395,8 @@ tracks/2/keys = {
 "values": [Vector2(0, -8)]
 }
 
-[sub_resource type="Animation" id="Animation_4d12f"]
-resource_name = "WalkUp"
+[sub_resource type="Animation" id="Animation_teob8"]
+resource_name = "WalkDown"
 length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
@@ -1449,7 +1409,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [9, 10, 11, 12, 13, 14, 15, 9]
+"values": [1, 2, 3, 4, 5, 6, 7, 0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1461,7 +1421,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.8, 1.2)]
+"values": [Vector2(0.8, 1.1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1473,7 +1433,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(4, -20)]
+"values": [Vector2(-5, -21)]
 }
 
 [sub_resource type="Animation" id="Animation_mpm35"]
@@ -1558,6 +1518,47 @@ tracks/2/keys = {
 "values": [Vector2(4, -34)]
 }
 
+[sub_resource type="Animation" id="Animation_4d12f"]
+resource_name = "WalkUp"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 12, 13, 14, 15, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8, 1.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -20)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ph8af"]
 _data = {
 "RESET": SubResource("Animation_x4g4t"),
@@ -1573,7 +1574,7 @@ script = ExtResource("1_u34cw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("currentLevel") instance=ExtResource("2_3vxcb")]
 y_sort_enabled = true
-position = Vector2(-32, -344)
+position = Vector2(1456, -1072)
 currentLevel = NodePath("..")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1880,7 +1881,6 @@ z_index = 1
 position = Vector2(256, 32)
 
 [node name="StaticBody2D52" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(640, 96)
 
 [node name="StaticBody2D53" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
@@ -1904,23 +1904,18 @@ z_index = 1
 position = Vector2(256, 416)
 
 [node name="StaticBody2D70" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(256, 480)
 
 [node name="StaticBody2D71" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(256, 544)
 
 [node name="StaticBody2D72" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(256, 608)
 
 [node name="StaticBody2D121" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(832, 1056)
 
 [node name="StaticBody2D122" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(832, 1120)
 
 [node name="StaticBody2D167" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
@@ -1980,19 +1975,15 @@ z_index = 1
 position = Vector2(1536, 416)
 
 [node name="StaticBody2D206" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1536, 480)
 
 [node name="StaticBody2D207" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1536, 544)
 
 [node name="StaticBody2D208" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1536, 608)
 
 [node name="StaticBody2D209" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1536, 672)
 
 [node name="StaticBody2D210" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
@@ -2052,32 +2043,26 @@ position = Vector2(-32, 128)
 rotation = 1.5708
 
 [node name="StaticBody2D57" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(608, 384)
 rotation = 1.5708
 
 [node name="StaticBody2D58" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(544, 384)
 rotation = 1.5708
 
 [node name="StaticBody2D59" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(480, 384)
 rotation = 1.5708
 
 [node name="StaticBody2D60" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(416, 384)
 rotation = 1.5708
 
 [node name="StaticBody2D61" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(352, 384)
 rotation = 1.5708
 
 [node name="StaticBody2D62" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(288, 384)
 rotation = 1.5708
 
@@ -2352,32 +2337,26 @@ position = Vector2(544, -64)
 rotation = 1.5708
 
 [node name="StaticBody2D95" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(800, 1152)
 rotation = 1.5708
 
 [node name="StaticBody2D96" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(736, 1152)
 rotation = 1.5708
 
 [node name="StaticBody2D97" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(672, 1152)
 rotation = 1.5708
 
 [node name="StaticBody2D98" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(608, 1152)
 rotation = 1.5708
 
 [node name="StaticBody2D99" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(544, 1152)
 rotation = 1.5708
 
 [node name="StaticBody2D100" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(480, 1152)
 rotation = 1.5708
 
@@ -2387,142 +2366,114 @@ position = Vector2(32, 960)
 rotation = 1.5708
 
 [node name="StaticBody2D116" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-32, 960)
 rotation = 1.5708
 
 [node name="StaticBody2D117" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-96, 960)
 rotation = 1.5708
 
 [node name="StaticBody2D118" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-160, 960)
 rotation = 1.5708
 
 [node name="StaticBody2D119" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-224, 960)
 rotation = 1.5708
 
 [node name="StaticBody2D120" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-288, 960)
 rotation = 1.5708
 
 [node name="StaticBody2D101" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(416, 1152)
 rotation = 1.5708
 
 [node name="StaticBody2D102" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(352, 1152)
 rotation = 1.5708
 
 [node name="StaticBody2D103" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(288, 1152)
 rotation = 1.5708
 
 [node name="StaticBody2D104" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(224, 1152)
 rotation = 1.5708
 
 [node name="StaticBody2D105" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(160, 1152)
 rotation = 1.5708
 
 [node name="StaticBody2D123" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1440, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D133" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1504, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D191" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1568, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D192" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1632, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D193" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1696, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D124" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1376, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D125" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1312, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D126" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1248, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D127" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1184, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D128" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1120, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D129" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1056, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D130" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(992, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D131" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(928, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D132" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(864, 1024)
 rotation = 1.5708
 
 [node name="StaticBody2D106" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(96, 1152)
 rotation = 1.5708
 
 [node name="StaticBody2D78" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-160, 704)
 rotation = 1.5708
 
 [node name="StaticBody2D79" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-224, 704)
 rotation = 1.5708
 
 [node name="StaticBody2D80" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-352, 704)
 rotation = 1.5708
 
@@ -2620,52 +2571,42 @@ position = Vector2(0, 416)
 rotation = -3.14159
 
 [node name="StaticBody2D180" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1408, 224)
 rotation = -3.14159
 
 [node name="StaticBody2D181" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1408, 288)
 rotation = -3.14159
 
 [node name="StaticBody2D182" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1408, 352)
 rotation = -3.14159
 
 [node name="StaticBody2D183" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1408, 416)
 rotation = -3.14159
 
 [node name="StaticBody2D184" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1408, 480)
 rotation = -3.14159
 
 [node name="StaticBody2D185" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1408, 544)
 rotation = -3.14159
 
 [node name="StaticBody2D186" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1408, 608)
 rotation = -3.14159
 
 [node name="StaticBody2D187" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1408, 672)
 rotation = -3.14159
 
 [node name="StaticBody2D188" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1408, 736)
 rotation = -3.14159
 
 [node name="StaticBody2D189" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(1408, 800)
 rotation = -3.14159
 
@@ -2675,7 +2616,6 @@ position = Vector2(1408, 864)
 rotation = -3.14159
 
 [node name="StaticBody2D107" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(64, 736)
 rotation = -3.14159
 
@@ -2690,17 +2630,14 @@ position = Vector2(64, 864)
 rotation = -3.14159
 
 [node name="StaticBody2D194" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(64, 736)
 rotation = -3.14159
 
 [node name="StaticBody2D195" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(64, 800)
 rotation = -3.14159
 
 [node name="StaticBody2D196" parent="Walls Group1" instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(64, 864)
 rotation = -3.14159
 
@@ -2883,8 +2820,10 @@ position = Vector2(1760, -608)
 position = Vector2(1632, -224)
 
 [node name="StaticBody2D221" parent="Walls Group1" instance=ExtResource("12_kxeor")]
-z_index = 2
 position = Vector2(1568, 672)
+
+[node name="StaticBody2D270" parent="Walls Group1" instance=ExtResource("12_kxeor")]
+position = Vector2(1632, 672)
 
 [node name="StaticBody2D222" parent="Walls Group1" instance=ExtResource("5_yhgdx")]
 position = Vector2(1696, 672)
@@ -3187,7 +3126,13 @@ position = Vector2(866, -1168)
 position = Vector2(2080, -656)
 
 [node name="StaticBody2D109" parent="." instance=ExtResource("17_uw6es")]
-position = Vector2(1728, -1056)
+position = Vector2(1744, -944)
+
+[node name="StaticBody2D117" parent="." instance=ExtResource("17_uw6es")]
+position = Vector2(1584, -944)
+
+[node name="StaticBody2D119" parent="." instance=ExtResource("17_uw6es")]
+position = Vector2(1664, -1192)
 
 [node name="StaticBody2D61" parent="." instance=ExtResource("17_uw6es")]
 position = Vector2(1632, -176)
@@ -3247,6 +3192,12 @@ position = Vector2(1312, -1248)
 
 [node name="StaticBody2D268" parent="." instance=ExtResource("11_cw71f")]
 position = Vector2(1568, -1248)
+
+[node name="StaticBody2D270" parent="." instance=ExtResource("11_cw71f")]
+position = Vector2(1632, -1248)
+
+[node name="StaticBody2D271" parent="." instance=ExtResource("11_cw71f")]
+position = Vector2(1696, -1248)
 
 [node name="StaticBody2D269" parent="." instance=ExtResource("11_cw71f")]
 position = Vector2(1760, -1248)
@@ -3507,52 +3458,42 @@ position = Vector2(-384, 480)
 rotation = -3.14159
 
 [node name="StaticBody2D20" parent="." instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-384, 544)
 rotation = -3.14159
 
 [node name="StaticBody2D21" parent="." instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-384, 608)
 rotation = -3.14159
 
 [node name="StaticBody2D22" parent="." instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-384, 672)
 rotation = -3.14159
 
 [node name="StaticBody2D25" parent="." instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-320, 736)
 rotation = -3.14159
 
 [node name="StaticBody2D26" parent="." instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-320, 800)
 rotation = -3.14159
 
 [node name="StaticBody2D27" parent="." instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-320, 864)
 rotation = -3.14159
 
 [node name="StaticBody2D37" parent="." instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(64, 992)
 rotation = -3.14159
 
 [node name="StaticBody2D38" parent="." instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(64, 1056)
 rotation = -3.14159
 
 [node name="StaticBody2D39" parent="." instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(64, 1120)
 rotation = -3.14159
 
 [node name="StaticBody2D28" parent="." instance=ExtResource("3_ln3qp")]
-z_index = 1
 position = Vector2(-320, 928)
 rotation = -3.14159
 
@@ -3671,6 +3612,9 @@ position = Vector2(1120, -1120)
 [node name="StaticBody2D116" parent="." instance=ExtResource("20_tmctw")]
 position = Vector2(1632, -1056)
 
+[node name="StaticBody2D118" parent="." instance=ExtResource("20_tmctw")]
+position = Vector2(1696, -1056)
+
 [node name="Computer" parent="." instance=ExtResource("22_udova")]
 position = Vector2(1698, 736)
 
@@ -3682,6 +3626,9 @@ offset_left = -48.0
 offset_top = -8.0
 offset_right = -8.0
 offset_bottom = 15.0
+
+[node name="Chest_Speed8" parent="." instance=ExtResource("24_ol5ky")]
+position = Vector2(1664, -1120)
 
 [editable path="slimes/slime"]
 [editable path="slimes/slime/PlayerDeathZone2"]

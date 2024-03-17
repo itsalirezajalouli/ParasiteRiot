@@ -61,14 +61,27 @@ expand_mode = 1
 [node name="Label" type="Label" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 296.0
-offset_top = 15.0
-offset_right = 306.0
-offset_bottom = 38.0
+offset_left = 279.0
+offset_top = 22.0
+offset_right = 289.0
+offset_bottom = 45.0
 theme_override_fonts/font = ExtResource("3_w2mdq")
 theme_override_font_sizes/font_size = 10
 text = "0
 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 290.0
+offset_top = 22.0
+offset_right = 310.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("3_w2mdq")
+theme_override_font_sizes/font_size = 10
+text = "/ 20"
 horizontal_alignment = 1
 vertical_alignment = 1
 

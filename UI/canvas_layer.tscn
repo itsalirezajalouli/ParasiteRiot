@@ -78,7 +78,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.0823529, 1, 0.643137, 1)
 theme_override_fonts/font = ExtResource("1_p6i4l")
 theme_override_font_sizes/font_size = 24
-text = "Parasite Breakout"
+text = "Parasite Riot"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -148,6 +148,22 @@ theme_override_styles/hover = ExtResource("2_4nf7d")
 theme_override_styles/pressed = ExtResource("2_4nf7d")
 theme_override_styles/focus = ExtResource("2_4nf7d")
 text = "QUIT"
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 32.0
+offset_top = 99.0
+offset_right = 71.0
+offset_bottom = 123.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0156863, 0.0784314, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("1_p6i4l")
+theme_override_font_sizes/font_size = 8
+text = "[soon]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(128, 104)
