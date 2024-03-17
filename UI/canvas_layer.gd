@@ -20,7 +20,7 @@ func _on_start_pressed():
 
 
 func _on_levels_2_pressed():
-	pass
+	get_tree().change_scene_to_file("res://Player/tutorial.tscn")
 
 func _on_creators_pressed():
 	get_tree().change_scene_to_file("res://UI/creators.tscn")

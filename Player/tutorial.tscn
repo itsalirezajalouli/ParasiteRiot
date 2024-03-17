@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ck7c3duobjq8e"]
 
-[ext_resource type="Script" path="res://UI/canvas_layer.gd" id="1_7uljp"]
+[ext_resource type="Script" path="res://Player/tutorial.gd" id="1_geic7"]
 [ext_resource type="Texture2D" uid="uid://bitq7dbpr7jos" path="res://UI/grid.png" id="2_j80jx"]
 [ext_resource type="Texture2D" uid="uid://da5cdv727yeed" path="res://UI/box.png" id="3_pabjp"]
 [ext_resource type="FontFile" uid="uid://b8253e5gv0ngi" path="res://Font/superstar_memesbruh03.ttf" id="4_s7okm"]
@@ -50,7 +50,7 @@ _data = {
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_7uljp")
+script = ExtResource("1_geic7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 320.0
@@ -86,7 +86,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 0.5
+anchor_left = 0.4125
 anchor_right = 0.4125
 anchor_bottom = 0.00555556
 offset_left = 11.0
@@ -109,7 +109,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="start" type="Button" parent="."]
 anchors_preset = -1
-anchor_left = 0.553125
+anchor_left = 0.5
+anchor_top = -0.0388889
 anchor_right = 0.5
 anchor_bottom = -0.0388889
 offset_left = -408.0
@@ -168,3 +169,4 @@ text = "next"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="levels2" to="." method="_on_levels_2_pressed"]

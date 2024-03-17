@@ -234,4 +234,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="levels2" to="." method="_on_levels_2_pressed"]
 [connection signal="pressed" from="creators" to="." method="_on_creators_pressed"]
