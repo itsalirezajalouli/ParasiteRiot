@@ -3365,6 +3365,7 @@ position = Vector2(1410, -1120)
 
 [node name="vgate6" parent="." instance=ExtResource("21_0cm7i")]
 position = Vector2(1405, -1054)
+gate_id = "Key"
 
 [node name="vgate5" parent="." instance=ExtResource("21_0cm7i")]
 position = Vector2(829, 992)

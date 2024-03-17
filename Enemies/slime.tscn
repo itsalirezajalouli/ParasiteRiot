@@ -527,7 +527,7 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_o0rgs")
 anim_player = NodePath("../AnimationPlayer")
-parameters/walk/blend_position = Vector2(-0.00205761, -0.00484574)
+parameters/walk/blend_position = Vector2(0.00312829, -0.0291005)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1

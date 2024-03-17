@@ -9,14 +9,14 @@ extends StaticBody2D
 func _ready():
 	
 	if gate_id=="none":
-			label.text = '[K]'
+			label.text = '[J]'
 	else:
-		label.text = '[K] Only ' + str(gate_id)
+		label.text = '[J] Only ' + str(gate_id)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if can_intract and Input.is_action_just_pressed("gate"):
+	if can_intract and Input.is_action_just_pressed("interact"):
 		if gate_state:
 			gate_state=false
 			$AnimationPlayer.play("close")

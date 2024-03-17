@@ -52,24 +52,32 @@ func _process(delta):
 		get_parent().add_child(yaroo)
 		yaroo.position = position
 		yaroo.id = global.type
-		global.type="none"
 		sprite_2d.show()
 		sprite_2d_3.hide()
 		sprite_2d_2.hide()
+		global.type="none"
+		$AnimationPlayer_yaroo.active = false
+		$AnimationTree_yaroo.active = false
 		animationPlayer = $AnimationPlayer
 		animationTree  = $AnimationTree
 		animationState = animationTree.get('parameters/playback')
 		label.hide()
 	if global.type != "none" and animationPlayer!=$AnimationPlayer_yaroo:
-		
+		print('2')
 		sprite_2d.hide()
 		sprite_2d_2.hide()
 		sprite_2d_3.show()
+		animationTree.active = false
 		animationPlayer = $AnimationPlayer_yaroo
 		animationTree  = $AnimationTree_yaroo
 		animationState = animationTree.get('parameters/playback')
 		label.show()
 		label.text = '[k] detach'
+	if global.type == 'none':
+		print('1')
+		sprite_2d.show()
+		sprite_2d_2.hide()
+		sprite_2d_3.hide()
 	animationTree.active = true
 	handleCollision()
 	match state:

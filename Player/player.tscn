@@ -14,7 +14,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hemx0"]
 shader = ExtResource("2_beklb")
-shader_parameter/enabled = false
+shader_parameter/enabled = true
 shader_parameter/tinit = Color(0.917647, 0.0509804, 0.235294, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n21vo"]
@@ -471,11 +471,11 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("Sprite2D2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -483,7 +483,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_eg571"]
@@ -828,6 +828,7 @@ position = Vector2(-1, -5)
 shape = SubResource("CapsuleShape2D_uek7b")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("6_4p77d")
 hframes = 8
 vframes = 2
