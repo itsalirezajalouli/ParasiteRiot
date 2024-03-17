@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b41txu0l84nt1"]
+[gd_scene load_steps=22 format=3 uid="uid://b41txu0l84nt1"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_u34cw"]
 [ext_resource type="PackedScene" uid="uid://b8erj3x5fewed" path="res://Player/player.tscn" id="2_3vxcb"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" path="res://World/table.tscn" id="16_kwvjc"]
 [ext_resource type="PackedScene" uid="uid://dd364r2bh7d8x" path="res://World/gate.tscn" id="17_dmese"]
 [ext_resource type="PackedScene" uid="uid://ctv6dbfa8v0sv" path="res://World/cage.tscn" id="17_uw6es"]
-[ext_resource type="PackedScene" uid="uid://dbgit24oeu2xp" path="res://inventory/items/potion3.tscn" id="18_0w4bj"]
 [ext_resource type="PackedScene" uid="uid://cgg5o8rlby38q" path="res://World/chest_inv.tscn" id="19_2u34w"]
 [ext_resource type="PackedScene" uid="uid://2jclmwoffnjn" path="res://World/vgate.tscn" id="20_tjie0"]
 [ext_resource type="PackedScene" uid="uid://cyqnf8ha1jvy0" path="res://World/chest_slo.tscn" id="20_ulm1i"]
@@ -1381,14 +1380,14 @@ position = Vector2(264, 8)
 
 [node name="slime2" parent="slimes" instance=ExtResource("4_804nt")]
 z_index = -1
-position = Vector2(120, 64)
+position = Vector2(120, 96)
 id = "Terry"
 
 [node name="Marker2D" parent="slimes/slime2" index="10"]
 position = Vector2(0, 256)
 
 [node name="slime3" parent="slimes" instance=ExtResource("4_804nt")]
-position = Vector2(552, 264)
+position = Vector2(552, 296)
 id = "Jack"
 
 [node name="Marker2D" parent="slimes/slime3" index="10"]
@@ -1423,7 +1422,7 @@ id = "Dave"
 position = Vector2(0, 248)
 
 [node name="slime6" parent="slimes" instance=ExtResource("4_804nt")]
-position = Vector2(568, 1080)
+position = Vector2(736, 1096)
 id = "Dave"
 
 [node name="Marker2D" parent="slimes/slime6" index="10"]
@@ -2465,9 +2464,6 @@ position = Vector2(1376, -176)
 [node name="StaticBody2D61" parent="." instance=ExtResource("17_uw6es")]
 position = Vector2(1632, -176)
 
-[node name="StaticBody2D8" parent="." instance=ExtResource("18_0w4bj")]
-position = Vector2(-272, 80)
-
 [node name="StaticBody2D10" parent="." instance=ExtResource("3_ln3qp")]
 z_index = -5
 position = Vector2(511, 96)
@@ -2673,17 +2669,20 @@ position = Vector2(1568, 880)
 [node name="Bush4" parent="." instance=ExtResource("21_fs7fi")]
 position = Vector2(640, 976)
 
-[node name="StaticBody2D40" parent="." instance=ExtResource("18_0w4bj")]
-position = Vector2(448, 952)
-
 [node name="Chest_Speed" parent="." instance=ExtResource("7_ecwa0")]
 position = Vector2(-32, -432)
 
 [node name="Chest_Speed2" parent="." instance=ExtResource("19_2u34w")]
-position = Vector2(0, -288)
+position = Vector2(-288, 456)
 
 [node name="Chest_Speed3" parent="." instance=ExtResource("20_ulm1i")]
-position = Vector2(-96, -288)
+position = Vector2(592, 144)
+
+[node name="Chest_Speed4" parent="." instance=ExtResource("20_ulm1i")]
+position = Vector2(448, 968)
+
+[node name="Chest_Speed5" parent="." instance=ExtResource("7_ecwa0")]
+position = Vector2(1632, 712)
 
 [editable path="slimes/slime"]
 [editable path="slimes/slime/PlayerDeathZone2"]
