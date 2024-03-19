@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://q15kloktu21e"]
+[gd_scene load_steps=12 format=3 uid="uid://q15kloktu21e"]
 
 [ext_resource type="Script" path="res://UI/canvas_layer.gd" id="1_0t8bf"]
 [ext_resource type="FontFile" uid="uid://b8253e5gv0ngi" path="res://Font/superstar_memesbruh03.ttf" id="1_p6i4l"]
 [ext_resource type="StyleBox" uid="uid://f0gosvlwm4c6" path="res://Font/buttonstyle2.tres" id="2_4nf7d"]
+[ext_resource type="AudioStream" uid="uid://duw3352sdddq3" path="res://Music and Sounds/menu.wav" id="2_cmoeu"]
 [ext_resource type="Texture2D" uid="uid://da5cdv727yeed" path="res://UI/box.png" id="4_12cec"]
 [ext_resource type="Texture2D" uid="uid://dqbnmbjcu6dea" path="res://spritesheet (3).png" id="4_t8vmf"]
 [ext_resource type="Texture2D" uid="uid://bitq7dbpr7jos" path="res://UI/grid.png" id="5_ayxqk"]
@@ -51,6 +52,11 @@ _data = {
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_0t8bf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(83, 132)
+stream = ExtResource("2_cmoeu")
+autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 320.0

@@ -9,3 +9,6 @@ script = ExtResource("2_rvxl3")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_7b21s")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-4.28398e-05, -2.00003)

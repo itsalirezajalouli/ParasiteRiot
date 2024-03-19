@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b41txu0l84nt1"]
+[gd_scene load_steps=35 format=3 uid="uid://b41txu0l84nt1"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_u34cw"]
 [ext_resource type="PackedScene" uid="uid://b8erj3x5fewed" path="res://Player/player.tscn" id="2_3vxcb"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bj1bjsawkiv4h" path="res://World/table3.tscn" id="21_fs7fi"]
 [ext_resource type="PackedScene" uid="uid://dk0ty8u2fu7a" path="res://World/computer.tscn" id="22_udova"]
 [ext_resource type="PackedScene" uid="uid://b5gjq0larp5we" path="res://Enemies/prison.tscn" id="24_ol5ky"]
+[ext_resource type="AudioStream" uid="uid://j0lnmmcafqec" path="res://Music and Sounds/game.wav" id="26_dk2hv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cqq8e"]
 texture = ExtResource("4_ckb7d")
@@ -1575,7 +1576,7 @@ script = ExtResource("1_u34cw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("currentLevel") instance=ExtResource("2_3vxcb")]
 y_sort_enabled = true
-position = Vector2(-32, -344)
+position = Vector2(-32, -360)
 currentLevel = NodePath("..")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2714,7 +2715,6 @@ position = Vector2(96, -160)
 position = Vector2(-160, 416)
 
 [node name="StaticBody2D146" parent="Walls Group1" instance=ExtResource("12_kxeor")]
-z_index = 2
 position = Vector2(1440, -224)
 
 [node name="StaticBody2D158" parent="Walls Group1" instance=ExtResource("12_kxeor")]
@@ -3523,6 +3523,8 @@ position = Vector2(640, 976)
 
 [node name="Chest_Speed" parent="." instance=ExtResource("7_ecwa0")]
 position = Vector2(-32, -432)
+collision_layer = 3
+collision_mask = 2
 
 [node name="Chest_Speed2" parent="." instance=ExtResource("19_2u34w")]
 position = Vector2(-288, 456)
@@ -3630,6 +3632,10 @@ offset_bottom = 15.0
 
 [node name="Chest_Speed8" parent="." instance=ExtResource("24_ol5ky")]
 position = Vector2(1664, -1120)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_dk2hv")
+autoplay = true
 
 [editable path="slimes/slime"]
 [editable path="slimes/slime/PlayerDeathZone2"]

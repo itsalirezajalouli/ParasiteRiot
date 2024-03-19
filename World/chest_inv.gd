@@ -19,5 +19,5 @@ func _on_interact():
 		speedpotion.position = position
 		speedpotion.position.x -= 20
 		speedpotion.position.y += 15
-		animations.play('empty')
+		animations.play('open')
 	animation_played = true
